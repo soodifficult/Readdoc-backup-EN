@@ -37,7 +37,7 @@ Connect IG902 to the power source and to a PC with an Ethernet cable according t
 ![](images/2020-01-21-10-42-52.png)  
 
 ### Connect IG902 to the Internet
-  - Method 2: Connect to the Internet by SIM card
+  - Method 1: Connect to the Internet by SIM card
     - Step 1: Insert the SIM card. (Note: Before inserting or removing the SIM card, unplug the power cable; otherwise, the operation may cause data loss or damage the IG902.) After inserting the SIM card, connect the 4G LTE antenna to the ANT interface and power on the IG902.  <br/>
 
       ![](images/2020-01-21-11-14-06.png)  <br/>
@@ -49,16 +49,19 @@ Connect IG902 to the power source and to a PC with an Ethernet cable according t
 &nbsp;
 
       When the network connection status is Connected and an IP address has been allocated, the IG902 has been connected to the Internet with the SIM card. 
-      ![](images/2020-01-21-16-41-33.png)
+      ![](images/2020-01-21-16-41-33.png)&nbsp;
+ 
+
   - Method 2: Connect to the Internet by Ethernet
     - Step 1: Use the Ethernet cable to connect the GE 0/1 and GE 0/2 ports of the IG902 respectively, as shown below: 
  
-      ![](images/2020-01-21-11-23-29.png)  </br>
-   &nbsp;
+      ![](images/2020-01-21-11-23-29.png)
+   </br>
 
     - Step 2: Choose Network > Network Interface > Ethernet > Gigabit Ethernet 0/1 page of IG902 to configure the IP address of the GE 0/1 port and click Submit. (When the network type is a static IP address, you need to configure the IP, subnet mask, and other information according to the site network conditions.)
 ![](images/2020-01-21-11-35-11.png)
-![](images/2020-01-21-11-35-37.png)  </br>
+
+      ![](images/2020-01-21-11-35-37.png)  </br>
    &nbsp;
 
     - Step 3: Choose Network > Static Routing > Configuration page of IG902 to add a static route for GE 0/1 port and click Submit. (Select "Gigabitethernet 0/1" for the interface item, and configure the other items according to the site network conditions.)
@@ -68,7 +71,7 @@ Connect IG902 to the power source and to a PC with an Ethernet cable according t
   ![](images/2020-01-21-11-39-12.png)
 
 ### Update the firmware
-To obtain the latest firmware version of IG902 and updated functions, contact the customer service center. To update the IG902 firmware, do as follows:<font color=#FF0000> (The firmware version should be 2.0.0.r12057 and above.)</font>   
+To obtain the latest firmware version of IG902 and updated functions, contact the customer service center. To update the IG902 firmware, do as follows:<font color=#FF0000> (The firmware version should be 2.0.0.r12057 and above)</font>   </br>
 Choose System > Firmware Upgrade page of IG902 and select the corresponding firmware file and click Start Upgrade. Select a firmware file and click Start Upgrading. After the update is completed, you are prompted to restart the system to Apply the new firmware.  <font color=#FF0000> It is recommended to ensure that the IG902 has the https service enabled before the upgrade, otherwise the IG902 cannot be accessed through the web page after the upgrade. </font>
 ![](images/2020-01-21-14-20-39.png)
  &nbsp;
@@ -146,11 +149,14 @@ There are two ways to add docker images for Portainer.
 
 ## Appendix
 ### How to download docker images from gitlab / github 
-Choose Local > Registries page of Portainer and click Add registry to add a docker mirror repository (must be a public repository).  </br>
-![](images/2020-01-19-10-39-19.png)
-Then select Custom registry and configure the mirror repository information. After configuration, click Add registry.  </br>
-![](images/2020-01-21-15-40-36.png)
-After the mirror repository is successfully added, you can see the web page as shown below:  </br>
-![](images/2020-01-21-15-41-25.png)
-After the addition is successful, you can select the configured image repository when pulling the docker image.  </br>
+Choose Local > Registries page of Portainer and click Add registry to add a docker mirror repository (must be a public repository).
+![](images/2020-01-19-10-39-19.png)  </br>
+
+Then select Custom registry and configure the mirror repository information. After configuration, click Add registry.
+![](images/2020-01-21-15-40-36.png)  </br>
+
+After the mirror repository is successfully added, you can see the web page as shown below:
+![](images/2020-01-21-15-41-25.png)  </br>
+
+After the addition is successful, you can select the configured image repository when pulling the docker image.
 ![](images/2020-01-21-15-41-59.png)
