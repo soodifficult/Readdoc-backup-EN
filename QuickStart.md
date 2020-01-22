@@ -137,6 +137,7 @@ Decompress the downloaded project template package, run VS Code to open the hell
     - `main.py`: App entrance
   - `config.yaml`: App configuration file, of which the content can be customized
   - `setup.py`: information such as App version and SDK version. It is recommended to customize the information based on the standard template.  <br/>
+   &nbsp;
 
 - Step 2: Run VS Code to open the custom project template folder, choose File > Open Folder, and select the custom project template folder.
  &nbsp;
