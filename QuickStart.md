@@ -1,5 +1,5 @@
 # **MobiusPi Python Development Quick Start**
-MobiusPi is the code name of InGateway series software and hardware products of InHand Networks.  <br/>The InGateway series includes two product series, the InGateway900 and InGateway500 series. This document uses the InGateway500(IG500 for short) series product as an example to demonstrate how to develop Python App with MobiusPI.
+MobiusPi is the code name of InGateway series software and hardware products of Beijing InHand Networks Technology Co., Ltd.  <br/> The InGateway includes two main product series, InGateway900 and InGateway500. This document uses InGateway500 series (IG500 for short) as an example to demonstrate how to develop Python App with MobiusPI.
 ## Building the MobiusPi Development Environment
 ### Prepare IG500 Hardware and Network Environment
 #### Connect IG500 to the Power Source and to a PC with a Network Cable
@@ -12,7 +12,8 @@ Connect IG500 to the power source and to a PC with an Ethernet cable according t
      ![](images/2020-01-02-09-55-52.png) <br/>
  &nbsp;
 
-  - Method 2: Set a fixed IP address on the same subnet with FE 0/1 of IG500 for the PC. Select Use the following IP address, enter an IP address (By default,any from 192.168.1.2 to 192.168.1.254), subnet mask (By default,255.255.255.0), default gateway (By default,192.168.1.1), and DNS server address, and click OK.  <br/>
+  - Method 2: Set a fixed IP address <br/>
+     Select Use the following IP address, enter an IP address (By default,any from 192.168.1.2 to 192.168.1.254), subnet mask (By default,255.255.255.0), default gateway (By default,192.168.1.1), and DNS server address, and click OK.  <br/>
   ![](images/2020-01-02-09-56-52.png)   
 <br/>
 
@@ -28,7 +29,7 @@ Connect IG500 to the power source and to a PC with an Ethernet cable according t
 ![](images/2020-01-02-10-01-07.png)   
 &nbsp;
 
-- Step 5: To change the IP address of FE 0/1, choose Network > Ethernet > Configure to configure FE 0/1.
+- Step 5: To change the IP address of FE 0/1, choose Network > Network Interfaces > Ethernet > Configure to configure FE 0/1.
 ![](images/2020-01-02-10-02-28.png)  
 
 #### Connect IG500 to the Internet
@@ -46,12 +47,12 @@ Connect IG500 to the power source and to a PC with an Ethernet cable according t
 
 #### Update the Software
 To obtain the latest version of IG500 and updated functions, contact the customer service center. To update the IG500 firmware or Python SDK, do as follows:
-- Update the IG500 firmware.  
+- Update the IG500 firmware.  <br/>
   Choose System > Firmware Upgrade. Select a firmware file and click Start Upgrading. After the update is completed, you are prompted to restart the system to Apply the new firmware.
 ![](images/2020-01-02-10-13-48.png)
  &nbsp;
 
-- Upgrade the Python SDK of IG500.  
+- Upgrade the Python SDK of IG500.  <br/> 
 Choose Edge Computing > Python Edge Computing > Edge Computing Engine. Select Python Engine, select an SDK file, and click Upgrade. Then the IG500 automatically performs the upgrade.
 ![](images/2020-01-02-10-14-59.png)
 
@@ -172,12 +173,12 @@ Before debugging code remotely, you need to upload the local code to a remote se
 ![](images/2020-01-02-16-24-51.png)
  &nbsp;
 
-- Step 1: Open the `sftp.json` file.
+- Step 1: Open the `sftp.json` file.  <br/>
   Enter `>SFTP:Config` on the command interface to open the `sftp.json` file.
 ![](images/2020-01-02-16-25-48.png)
  &nbsp;
 
-- Step 2: Configure the SFTP connection.
+- Step 2: Configure the SFTP connection.  <br/>
   In the `sftp.json` file, configure the SFTP connection according to the parameters on the Edge Computing > Python Edge Computing > Edge Computing Engine interface.
   <font color=#FF0000>Note: The Python App name must be the same as the App name in `mian.py`. </font>
 
@@ -211,7 +212,7 @@ Before debugging code remotely, you need to upload the local code to a remote se
 
   You can check whether the remote server has received the App code in TERMINAL window. Enter the following commands in the TERMINAL window to show the uploaded App folder information:
   ```
-  cd App  
+  cd app  
   ls -l
   ```
   ![](images/2020-01-02-18-25-11.png)
@@ -237,12 +238,12 @@ Before debugging code remotely, you need to upload the local code to a remote se
 
 ### Construct App Release Package
 When the debugging is completed, you can construct the App release package so that the App can be quickly deployed to other IG500s.
-- Step 1: Construct an App release package.
-  Run the `build_py_App.sh HelloWorld` command in the TERMINAL window to construct an App release package, namely, the build_py_App.sh Python App name.
+- Step 1: Construct an App release package.  <br/>
+  Run the `build_py_app.sh HelloWorld` command in the TERMINAL window to construct an App release package, namely, the build_py_app.sh Python App name.
 ![](images/2020-01-02-18-31-55.png)
  &nbsp;
 
-- Step 2: Download the App release package.
+- Step 2: Download the App release package.  <br/>
   An App release package is automatically generated in the build directory on the remote server. Right-click the local build folder and click Download Folder to download the constructed App release package for future deployment.
 ![](images/2020-01-02-18-32-25.png)
  &nbsp;
@@ -251,8 +252,8 @@ When the debugging is completed, you can construct the App release package so th
 ![](images/2020-01-02-18-32-54.png)
 
 ### Deploy App on the InGateway Web Page
-After you run the App release package construction command, the App is automatically installed on the connected IG500. To deploy the App to another IG500, you can choose Edge Computing > Python Edge Computing > Application Program > Configure on the other IG500, and import and upload the App release package. The deployment procedure is as follows:
-- Step 1: Upload the App.
+After you run the App release package construction command, the App is automatically generated on the connected IG500, but this APP cannot be started normally. Please follow the procedure to deploy APP to IG500:
+- Step 1: Upload the App.  <br/>
   Choose Edge Computing > Python Edge Computing > Application Program > Configure on the IG500, and click the add button.
 ![](images/2020-01-03-09-38-24.png)
  &nbsp;
@@ -261,7 +262,7 @@ After you run the App release package construction command, the App is automatic
 ![](images/2020-01-03-09-38-57.png)
  &nbsp;
 
-- Step 2: Enable the App.
+- Step 2: Enable the App.  <br/>
   After the upload, select the Enable checkbox of HelloWorld and click Submit. Then the App automatically runs and will run every time the IG500 is started.
 ![](images/2020-01-03-10-56-50.png)
  &nbsp;
@@ -277,12 +278,12 @@ Click the log viewing icon to display the running log of the App.
 ![](images/2020-01-03-11-00-15.png)
 ![](./images/2019-12-05-14-54-03.png)
 ### Update Configuration File for App
-- Step 1: Modify the configuration file.
+- Step 1: Modify the configuration file.  <br/>
   Modify ```description:"hello world!"``` in the config.yaml file of the App into  ```description: "hello inhand!"```.  
 ![](./images/2019-12-05-14-54-34.png) <br/>
  &nbsp;
 
-- Step 2: Import the configuration file and restart the App.
+- Step 2: Import the configuration file and restart the App.  <br/>
   Choose Edge Computing > Python Edge Computing > Application Program > Configure on the IG500, import the modified configuration file of HelloWorld, and restart the App.  
 ![](images/2020-01-03-11-02-39.png)
 ![](images/2020-01-03-11-02-59.png)
@@ -301,7 +302,7 @@ To install the dependent library for App with pip, you need to enable the debugg
 
 - Step 2: Run pip install + dependent library name + ==version number + -t + lib folder path of the App, and press Enter to install the dependent library. (If the version number is not included, pip automatically installs the dependent library of the latest version.) 
   ```
-  pip install modbus_tk==1.1.0 -t /var/user/App/HelloWorld/lib/
+  pip install xlrd==1.2.0 -t /var/user/app/HelloWorld/lib/
   ```
 
   ![](images/2020-01-03-11-28-22.png)
@@ -313,14 +314,14 @@ To install the dependent library for App with pip, you need to enable the debugg
 
 - Step 4: Run the `export` command to set the environment variables for the App. Run the following commands in the TERMINAL window.
   ```
-  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/var/user/App/HelloWorld/lib/  
-  export PYTHONPATH=$PYTHONPATH:/var/user/App/HelloWorld/lib/
+  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/var/user/app/HelloWorld/lib/  
+  export PYTHONPATH=$PYTHONPATH:/var/user/app/HelloWorld/lib/
   ```
   ![](images/2020-01-03-11-37-25.png)
  &nbsp;
 
   If a dependent library is installed for the App, you must configure the environment variables for the App before debugging; otherwise, the App cannot run normally during debugging.   
-  When the App does not run on the IG500, the App uses initial environment variables. When the App runs, the environment variables of the dependent library in the lib folder are automatically added.<br/>
+  After enabling the App in IG500, the environment variables of the third-party dependent library in the App's lib folder will be automatically added to the APP, without manual configuration.<br/>
  &nbsp;
 
 - Step 5: Execute code to ensure that the App runs normally.
