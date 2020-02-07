@@ -81,7 +81,6 @@ Choose System > Firmware Upgrade page of IG902 and select the corresponding firm
 The Docker SDK integrates the operating environment and docker image manager required to run the docker image. Before using Docker, you must install the Docker SDK. To obtain the Docker SDK, please contact the customer service center.  </br>
 - Step 1: If you already have the Docker SDK, choose Edge Computing > Docker Manager page of IG902 and import the Docker SDK.
 ![](images/2020-01-21-14-21-24.png)  </br>
-   &nbsp;
 
   After importing, IG902 will automatically install the Docker SDK. The installation process usually takes 1-2 minutes. Please be patient.
 ![](images/2020-01-21-14-21-45.png)  </br>
