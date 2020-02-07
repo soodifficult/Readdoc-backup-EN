@@ -84,11 +84,9 @@ The Docker SDK integrates the operating environment and docker image manager req
 
   After importing, IG902 will automatically install the Docker SDK. The installation process usually takes 1-2 minutes. Please be patient.
 ![](images/2020-01-21-14-21-45.png)  </br>
-   &nbsp;
    
 - Step 2: After successful installation, select Enable Docker Manager and click Submit.
 ![](images/2020-01-21-14-41-34.png)  </br>
-   &nbsp;
    
 - Step 3: Then you can modify the port number and login password to access the Docker manager.
 ![](images/2020-01-21-14-43-50.png)
