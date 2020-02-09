@@ -17,3 +17,4 @@ Welcome to MobiusPi development platform!
    :caption: User manual
 
    Docker user manual.md
+   test.md
