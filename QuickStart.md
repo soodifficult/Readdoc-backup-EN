@@ -83,9 +83,9 @@ To develop and debug Python code on IG500, you need to install the following plu
 - `SFTP`: used to upload code to IG500 with the SFTP Sync plug-in.
 ![](images/2020-01-02-10-19-57.png)  
 
-![](images/2020-01-02-10-22-26.png)  
+  ![](images/2020-01-02-10-22-26.png)  
 
-![](images/2020-01-02-10-24-12.png)  
+  ![](images/2020-01-02-10-24-12.png)  
  &nbsp;
 
 Now, all the plug-ins required for developing MobiusPi edge computing platform are installed. To know more about VS Code plug-ins, visit [Visual Studio Code official website](https://code.visualstudio.com/).
@@ -232,7 +232,8 @@ Before debugging code remotely, you need to upload the local code to a remote se
 &nbsp;
 
   The Python development environment of IG500 has a built-in ptvsd dependent library for remote code debugging. To learn about more usage information about ptvsd plug-in, see [ptvsd usage](https://github.com/microsoft/ptvsd/).
-  ![](images/2020-01-02-18-27-40.png)
+  ![](images/2020-01-02-18-27-40.png)  
+
   ![](images/2020-01-02-18-28-24.png)
  &nbsp;
 
@@ -278,7 +279,8 @@ Choose Edge Computing > Python Edge Computing on the IG500. You can see the runn
 ![](images/2020-02-15-16-54-40.png)
 
 Click the log viewing icon to display the running log of the App.
-![](images/2020-02-15-16-56-39.png)
+![](images/2020-02-15-16-56-39.png)  
+
 ![](./images/2019-12-05-14-54-03.png)
 ### Update Configuration File for App
 - Step 1: Modify the configuration file.  <br/>
