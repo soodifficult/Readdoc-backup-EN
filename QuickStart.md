@@ -82,7 +82,9 @@ To develop and debug Python code on IG500, you need to install the following plu
 - `Project Templates`: a VS Code extended plug-in used to quickly create projects based on custom templates. We will release several Python App templates. You can use Project Templates to import templates and quickly initialize projects.  
 - `SFTP`: used to upload code to IG500 with the SFTP Sync plug-in.
 ![](images/2020-01-02-10-19-57.png)  
+
 ![](images/2020-01-02-10-22-26.png)  
+
 ![](images/2020-01-02-10-24-12.png)  
  &nbsp;
 
@@ -165,6 +167,7 @@ In this course, an App named HelloWorld is used as an example to describe how to
 ### Coding
 The standard project template helloworld-template can print a "hello world!" log on IG500 every 10s, import configuration files to modify log content. To change the App name, modify the code in `main.py` and `setup.py` as follows: <font color=#FF0000>(Note: The Python App names cannot contain spaces.) </font>
 ![](images/2020-01-02-16-21-11.png)  
+
 ![](images/2020-01-02-16-22-29.png)
 
 ### Debugging
