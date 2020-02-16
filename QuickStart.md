@@ -260,6 +260,7 @@ After you run the App release package construction command, the App is automatic
 
   Select the HelloWorld release package in the "build" directory.
 ![](images/2020-02-15-16-49-03.png)
+&nbsp;
 
 - Step 2: Enable the App.  <br/>
   After the upload, select the Enable checkbox of HelloWorld and click Submit. Then the App automatically runs and will run every time the IG500 is started.
@@ -278,7 +279,7 @@ Click the log viewing icon to display the running log of the App.
 ![](./images/2019-12-05-14-54-03.png)
 ### Update Configuration File for App
 - Step 1: Modify the configuration file.  <br/>
-  Modify ```description:"hello world!"``` in the config.yaml file of the App into  ```description: "hello inhand!"```.  
+  Modify ```description:"hello world!"``` in the config.yaml file of the App into  ```description: "hello inhand!"```.  <br/>
 ![](./images/2019-12-05-14-54-34.png) <br/>
  &nbsp;
 
@@ -287,12 +288,13 @@ Click the log viewing icon to display the running log of the App.
 ![](images/2020-02-15-16-58-05.png)
  &nbsp;
 
-After the restart, the HelloWorld App runs with the modified configuration file. That is, it prints a "hello inhand!" log every 10s.  
+After the restart, the HelloWorld App runs with the modified configuration file. That is, it prints a "hello inhand!" log every 10s.  <br/>
 ![](./images/2019-12-06-15-20-04.png)
 ### Appendix
 #### Use pip to Install the Dependent Library for App
 To install the dependent library for App with pip, you need to enable the debugging mode for the IG500 and connect the IG500 to the Internet.
-![](images/2020-02-15-16-37-48.png)
+![](images/2020-02-15-16-37-48.png)  
+
 ![](images/2020-02-14-10-21-15.png)
 - Step 1: Use VS Code to set up an SFTP connection with the IG500. For details, see [Set Up an SFTP Connection](https://ingateway-development-docs-en.readthedocs.io/en/latest/QuickStart.html#set-up-an-sftp-connection).
 ![](images/2020-01-03-11-07-08.png)
