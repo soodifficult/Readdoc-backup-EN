@@ -213,52 +213,22 @@ Set direction and mode of digital IO.
 
 ### setup_analog_io(io_name="ai1",  mode=ANALOG_HIGH_V_MODE)
 Set direction and mode of analog IO.
-| Mode name          | Range  |
-| ------------------ | ------ |
-| ANALOG_LOW_A_MODE  | 0_20mA |
-| ANALOG_HIGH_A_MODE | 4_20mA |
-| ANALOG_LOW_V_MODE  | 0_5V   |
-| ANALOG_HIGH_V_MODE | 0_10V  |
 - parameter  
 
   `io_name`: the name of analog io which you can call get_io_list function to get.  
 
   `mode`:  <br/>
-
+    - ANALOG_LOW_A_MODE = "0_20mA"  
+    - ANALOG_HIGH_A_MODE = "4_20mA"  
+    - ANALOG_LOW_V_MODE = "0_5V"  
+    - ANALOG_HIGH_V_MODE = "0_10V"  
+  
   | Mode name          | Range  |
   | ------------------ | ------ |
   | ANALOG_LOW_A_MODE  | 0_20mA |
   | ANALOG_HIGH_A_MODE | 4_20mA |
   | ANALOG_LOW_V_MODE  | 0_5V   |
   | ANALOG_HIGH_V_MODE | 0_10V  |
-<table>
-    <thead>
-        <tr>
-            <th>Mode name</th>
-            <th>Range</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th>ANALOG_LOW_A_MODE</th>
-            <th>0_20mA</th>
-        </tr>
-        <tr>
-            <th>ANALOG_HIGH_A_MODE</th>
-            <th>4_20mA</th>
-        </tr>
-          <tr>
-            <th>ANALOG_LOW_V_MODE</th>
-            <th>0_5V</th>
-        </tr>
-        </tr>
-          <tr>
-            <th>ANALOG_HIGH_V_MODE</th>
-            <th>0_10V</th>
-        </tr>
-    </tbody>
-</table>
-
 
 
 - return value  
