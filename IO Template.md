@@ -39,7 +39,7 @@ io = IO()
 
 # get io list
 io_list = io.get_io_list()
-print("io_list:: %s " %  (io_list, ))
+print("io_list: %s " %  (io_list, ))
 ```
 And the results are as follows:
 ``` python
@@ -196,9 +196,11 @@ Get the information of all IO.
 Set direction and mode of digital IO.
 - parameter  
   
-  `io_name`: the name of digital io which you can call get_io_list function to get.  
-`direction`: INPUT_DIRECTION or OUTPUT_DIRECTION.  
-`mode`: DIGITAL_DRY_CONTACT_MODE or DIGITAL_WET_CONTACT_MODE.  
+  `io_name`: the name of digital io which you can call get_io_list function to get.  <br/>
+
+  `direction`: INPUT_DIRECTION or OUTPUT_DIRECTION.  <br/>
+
+  `mode`: DIGITAL_DRY_CONTACT_MODE or DIGITAL_WET_CONTACT_MODE.  
 
 - return value  
 
@@ -215,7 +217,7 @@ Set direction and mode of analog IO.
 
   `io_name`: the name of analog io which you can call get_io_list function to get.  
 
-  `mode`:  
+  `mode`:  <br/>
   | Mode name          | Range  |
   | ------------------ | ------ |
   | ANALOG_LOW_A_MODE  | 0_20mA |
