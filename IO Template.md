@@ -218,12 +218,6 @@ Set direction and mode of analog IO.
   `io_name`: the name of analog io which you can call get_io_list function to get.  
 
   `mode`:  <br/>
-| Mode name          | Range  |
-| ------------------ | ------ |
-| ANALOG_LOW_A_MODE  | 0_20mA |
-| ANALOG_HIGH_A_MODE | 4_20mA |
-| ANALOG_LOW_V_MODE  | 0_5V   |
-| ANALOG_HIGH_V_MODE | 0_10V  |
 
   | Mode name          | Range  |
   | ------------------ | ------ |
@@ -231,6 +225,15 @@ Set direction and mode of analog IO.
   | ANALOG_HIGH_A_MODE | 4_20mA |
   | ANALOG_LOW_V_MODE  | 0_5V   |
   | ANALOG_HIGH_V_MODE | 0_10V  |
+  
+| Mode name          | Range  |
+| ------------------ | ------ |
+| ANALOG_LOW_A_MODE  | 0_20mA |
+| ANALOG_HIGH_A_MODE | 4_20mA |
+| ANALOG_LOW_V_MODE  | 0_5V   |
+| ANALOG_HIGH_V_MODE | 0_10V  |
+
+
 
 - return value  
   
