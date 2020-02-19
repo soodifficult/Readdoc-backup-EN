@@ -213,6 +213,12 @@ Set direction and mode of digital IO.
 
 ### setup_analog_io(io_name="ai1",  mode=ANALOG_HIGH_V_MODE)
 Set direction and mode of analog IO.
+| Mode name          | Range  |
+| ------------------ | ------ |
+| ANALOG_LOW_A_MODE  | 0_20mA |
+| ANALOG_HIGH_A_MODE | 4_20mA |
+| ANALOG_LOW_V_MODE  | 0_5V   |
+| ANALOG_HIGH_V_MODE | 0_10V  |
 - parameter  
 
   `io_name`: the name of analog io which you can call get_io_list function to get.  
@@ -225,13 +231,7 @@ Set direction and mode of analog IO.
   | ANALOG_HIGH_A_MODE | 4_20mA |
   | ANALOG_LOW_V_MODE  | 0_5V   |
   | ANALOG_HIGH_V_MODE | 0_10V  |
-  
-| Mode name          | Range  |
-| ------------------ | ------ |
-| ANALOG_LOW_A_MODE  | 0_20mA |
-| ANALOG_HIGH_A_MODE | 4_20mA |
-| ANALOG_LOW_V_MODE  | 0_5V   |
-| ANALOG_HIGH_V_MODE | 0_10V  |
+
 
 
 
