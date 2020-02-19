@@ -217,19 +217,11 @@ Set direction and mode of analog IO.
 
   `io_name`: the name of analog io which you can call get_io_list function to get.  
 
-  `mode`:  <br/>
+  `mode`:  
     - ANALOG_LOW_A_MODE = "0_20mA"  
     - ANALOG_HIGH_A_MODE = "4_20mA"  
     - ANALOG_LOW_V_MODE = "0_5V"  
     - ANALOG_HIGH_V_MODE = "0_10V"  
-  
-  | Mode name          | Range  |
-  | ------------------ | ------ |
-  | ANALOG_LOW_A_MODE  | 0_20mA |
-  | ANALOG_HIGH_A_MODE | 4_20mA |
-  | ANALOG_LOW_V_MODE  | 0_5V   |
-  | ANALOG_HIGH_V_MODE | 0_10V  |
-
 
 - return value  
   
@@ -258,13 +250,11 @@ Write value to IO.
 - parameter  
   
   `io_name`: the name of analog io which you can call get_io_list function to get, and make sure you shuould write value to output io.  
-`value`: 
-  | Value name             | Value |
-  | ---------------------- | ----- |
-  | DRY_CONTACT_HIGH_VALUE | HIGH  |
-  | DRY_CONTACT_LOW_VALUE  | LOW   |
-  | WET_CONTACT_ON         | ON    |
-  | WET_CONTACT_OFF        | OFF   |
+`value`:  
+    - DRY_CONTACT_HIGH_VALUE = "HIGH"  
+    - DRY_CONTACT_LOW_VALUE = "LOW"  
+    - WET_CONTACT_ON = "ON"  
+    - WET_CONTACT_OFF = "OFF"
 
 - return value  
   
