@@ -1,4 +1,4 @@
-# Project description
+# IO
 This is the io template of InHand InGateway900 products, we provide some python APIs you can earsily used in you IoT solutions.
 ## Contents
 
@@ -6,15 +6,12 @@ This is the io template of InHand InGateway900 products, we provide some python 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
-
-- [Project description](#project-description)
-  - [Contents](#contents)
   - [Usage](#usage)
     - [Getting Started](#getting-started)
       - [get io list](#get-io-list)
       - [set mode of digital io](#set-mode-of-digital-io)
       - [read io](#read-io)
-    - [IO](#io)
+    - [IO](#io-1)
     - [Constructor Example](#constructor-example)
   - [API Reference](#api-reference)
     - [get_io_list()](#get_io_list)
@@ -44,7 +41,7 @@ io = IO()
 io_list = io.get_io_list()
 print("io_list:: %s " %  (io_list, ))
 ```
-And the results are as follows.
+And the results are as follows:
 ``` python
 #IG902 has 4 digital inputs, 2 digital outputs and 2 analog inputs
 io_list: [u'di1', u'di2', u'di3', u'di4', u'do1', u'do2', u'ai1', u'ai2']
@@ -62,7 +59,7 @@ io = IO()
 sdi = io.setup_digital_io(io_name='di1', direction=INPUT_DIRECTION, mode=DIGITAL_DRY_CONTACT_MODE)
 print("sdi: %s" % sdi)
 ```
-And the results are as follows.
+And the results are as follows:
 ``` python
 #Digital input 1 mode is drycontact
 sdi: {u'index': 1, u'type': u'digital input', u'name': u'di1', u'mode': u'drycontact'}
@@ -80,7 +77,7 @@ io = IO()
 ri = io.read_io('di1')
 print("ri: %s" % ri)
 ```
-And the results are as follows.
+And the results are as follows:
 ``` python
 #Digital input 1 level status is high level
 ri: HIGH
@@ -199,9 +196,9 @@ Get the information of all IO.
 Set direction and mode of digital IO.
 - parameter  
   
-  `io_name`: the name of digital io which you can call get_io_list function to get  
-`direction`: INPUT_DIRECTION or OUTPUT_DIRECTION  
-`mode`: DIGITAL_DRY_CONTACT_MODE or DIGITAL_WET_CONTACT_MODE  
+  `io_name`: the name of digital io which you can call get_io_list function to get.  
+`direction`: INPUT_DIRECTION or OUTPUT_DIRECTION.  
+`mode`: DIGITAL_DRY_CONTACT_MODE or DIGITAL_WET_CONTACT_MODE.  
 
 - return value  
 
@@ -216,7 +213,7 @@ Set direction and mode of digital IO.
 Set direction and mode of analog IO.
 - parameter  
 
-  `io_name`: the name of analog io which you can call get_io_list function to get  
+  `io_name`: the name of analog io which you can call get_io_list function to get.  
   `mode`:  
 
   | Mode name          | Range  |
@@ -252,8 +249,8 @@ Read the infomation of IO.
 Write value to IO.
 - parameter  
   
-  `io_name`: the name of analog io which you can call get_io_list function to get, and make sure you shuould write value to output io
-  `value`: 
+  `io_name`: the name of analog io which you can call get_io_list function to get, and make sure you shuould write value to output io.  
+`value`: 
   | Value name             | Value |
   | ---------------------- | ----- |
   | DRY_CONTACT_HIGH_VALUE | HIGH  |
