@@ -19,3 +19,4 @@ Welcome to MobiusPi development platform!
    IG501 Quick Start Manual.md
    IG902 Quick Start Manual.md
    Docker user manual.md
+   IO Template.md
