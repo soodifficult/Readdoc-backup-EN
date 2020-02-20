@@ -4,10 +4,12 @@ MobiusPi is the code name of InGateway series software and hardware products of 
 ### Prepare Hardware and Network Environment
 #### Connect MobiusPi to the Power Source and to a PC with a Network Cable
 - Prepare IG500 Hardware  
+  
   Connect IG500 to the power source and to a PC with an Ethernet cable according to the topology diagram.  <br/>
 ![](images/2020-02-20-09-23-14.png)  
 
 - Prepare IG900 Hardware  
+  
   Connect IG900 to the power source and to a PC with an Ethernet cable according to the topology diagram.  <br/>
 ![](images/2020-02-20-09-22-10.png)
 #### Set LAN Parameters
