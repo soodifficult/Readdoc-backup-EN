@@ -3,12 +3,12 @@ MobiusPi is the code name of InGateway series software and hardware products of 
 ## Building the MobiusPi Development Environment
 ### Prepare Hardware and Network Environment
 #### Connect MobiusPi to the Power Source and to a PC with a Network Cable
-- Prepare IG500 Hardware  <br/>
-  Connect IG500 to the power source and to a PC with an Ethernet cable according to the topology diagram.
+- Prepare IG500 Hardware  
+  Connect IG500 to the power source and to a PC with an Ethernet cable according to the topology diagram.  <br/>
 ![](images/2020-02-20-09-23-14.png)  
 
-- Prepare IG900 Hardware  <br/>
-  Connect IG900 to the power source and to a PC with an Ethernet cable according to the topology diagram.
+- Prepare IG900 Hardware  
+  Connect IG900 to the power source and to a PC with an Ethernet cable according to the topology diagram.  <br/>
 ![](images/2020-02-20-09-22-10.png)
 #### Set LAN Parameters
 - To set the IG500 LAN network parameters, see [Access the IG500 Through LAN](https://ingateway-development-docs-en.readthedocs.io/en/latest/IG501%20Quick%20Start%20Manual.html#set-lan-parameters-access-the-ig501-through-lan).
@@ -232,9 +232,9 @@ When the debugging is completed, you can construct the App release package so th
 ![](images/2020-01-02-18-32-54.png)
 
 ### Deploy App on the Web Page
-After you run the App release package construction command, the App is automatically generated on the connected MobiusPi, but this APP cannot be started normally. Please follow the procedure to deploy APP to MobiusPi:
-- [Deploy APP to IG500](https://ingateway-development-docs-en.readthedocs.io/en/latest/IG501%20Quick%20Start%20Manual.html#install-and-run-python-app)
-- [Deploy APP to IG900](https://ingateway-development-docs-en.readthedocs.io/en/latest/IG902%20Quick%20Start%20Manual.html#install-and-run-python-app)
+After you run the App release package construction command, the App is automatically generated on the connected MobiusPi, but this App cannot be started normally. Please follow the procedure to deploy App to MobiusPi:
+- [Deploy App to IG500](https://ingateway-development-docs-en.readthedocs.io/en/latest/IG501%20Quick%20Start%20Manual.html#install-and-run-python-app)
+- [Deploy App to IG900](https://ingateway-development-docs-en.readthedocs.io/en/latest/IG902%20Quick%20Start%20Manual.html#install-and-run-python-app)
 
 ### Check App Status
 Choose Edge Computing > Python Edge Computing on the MobiusPi. You can see the running status of the App.
@@ -288,7 +288,7 @@ To install the dependent library for App with pip, you need to enable the debugg
  &nbsp;
 
   If a dependent library is installed for the App, you must configure the environment variables for the App before debugging; otherwise, the App cannot run normally during debugging.   
-  After enabling the App in MobiusPi, the environment variables of the third-party dependent library in the App's lib folder will be automatically added to the APP, without manual configuration.<br/>
+  After enabling the App in MobiusPi, the environment variables of the third-party dependent library in the App's lib folder will be automatically added to the App, without manual configuration.<br/>
  &nbsp;
 
 - Step 5: Execute code to ensure that the App runs normally.
