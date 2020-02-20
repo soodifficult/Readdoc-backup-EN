@@ -11,7 +11,7 @@ MobiusPi is the code name of InGateway series software and hardware products of 
 - Prepare IG900 Hardware  
   
   Connect IG900 to the power source and to a PC with an Ethernet cable according to the topology diagram.  <br/>
-![](images/2020-02-20-09-22-10.png)
+![](images/2020-02-20-16-11-49.png)
 #### Set LAN Parameters
 - To set the IG500 LAN network parameters, see [Access the IG500 Through LAN](https://ingateway-development-docs-en.readthedocs.io/en/latest/IG501%20Quick%20Start%20Manual.html#set-lan-parameters-access-the-ig501-through-lan).
 - To set the IG900 LAN network parameters, see [Access the IG900 Through LAN](https://ingateway-development-docs-en.readthedocs.io/en/latest/IG902%20Quick%20Start%20Manual.html#set-lan-parameters-access-the-ig902-through-lan).
@@ -47,7 +47,7 @@ Download the software and run the installation program. After the software is su
 To develop and debug Python code on MobiusPi, you need to install the following plug-ins in Extensions of VS Code IDE.  
 - `Python`: a VS Code Python plug-in with abundant functions and features, including IntelliSense, linting, debugging, code navigation, code formatting, Jupyter notebook support, refactoring, variable explorer, test explorer, snippets, and more! To get more information, visit the [official website](https://code.visualstudio.com/docs/languages/python) of the plug-in.  
 - `Project Templates`: a VS Code extended plug-in used to quickly create projects based on custom templates. We will release several Python App templates. You can use Project Templates to import templates and quickly initialize projects.  
-- `SFTP`: used to upload code to IG500 with the SFTP Sync plug-in.
+- `SFTP`: used to upload code to MobiusPi with the SFTP Sync plug-in.
 ![](images/2020-01-02-10-19-57.png)  
 
   ![](images/2020-01-02-10-22-26.png)  
@@ -219,7 +219,7 @@ Before debugging code remotely, you need to upload the local code to a remote se
 ![](images/2020-01-02-18-30-13.png)
 
 ### Construct App Release Package
-When the debugging is completed, you can construct the App release package so that the App can be quickly deployed to other MobiusPi.
+When the debugging is completed, you can construct the App release package so that the App can be quickly deployed to other MobiusPis.
 - Step 1: Construct an App release package.  <br/>
   Run the `build_py_app.sh HelloWorld` command in the TERMINAL window to construct an App release package, namely, the build_py_app.sh Python App name.
 ![](images/2020-01-02-18-31-55.png)
