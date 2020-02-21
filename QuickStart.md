@@ -1,5 +1,44 @@
 # **MobiusPi Python Development Quick Start**
 MobiusPi is the code name of InGateway series software and hardware products of Beijing InHand Networks Technology Co., Ltd.  <br/> The InGateway includes two main product series, InGateway900(IG900 for short) and InGateway500(IG500 for short). This document aims to explain to users how to use the MobiusPi hardware product for Python development. 
+
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+  - [Building the MobiusPi Development Environment](#building-the-mobiuspi-development-environment)
+    - [Prepare Hardware and Network Environment](#prepare-hardware-and-network-environment)
+      - [Connect MobiusPi to the Power Source and to a PC with a Network Cable](#connect-mobiuspi-to-the-power-source-and-to-a-pc-with-a-network-cable)
+      - [Set LAN Parameters](#set-lan-parameters)
+      - [Set WAN Parameters](#set-wan-parameters)
+      - [Update the Software](#update-the-software)
+      - [Enable the Debug Mode of MobiusPi](#enable-the-debug-mode-of-mobiuspi)
+    - [Install Software on PC](#install-software-on-pc)
+      - [Install a Python Interpreter](#install-a-python-interpreter)
+      - [Install Visual Studio Code](#install-visual-studio-code)
+    - [Prepare the Development Environment of VS Code](#prepare-the-development-environment-of-vs-code)
+      - [Install the VS Code Plug-ins](#install-the-vs-code-plug-ins)
+      - [Configure the Python Interpreter Version](#configure-the-python-interpreter-version)
+      - [Configure Project Templates](#configure-project-templates)
+        - [Use the Standard Project Templates of InHand](#use-the-standard-project-templates-of-inhand)
+        - [Customize Project Template](#customize-project-template)
+  - [Compiling the First MobiusPi App: Hello World](#compiling-the-first-mobiuspi-app-hello-world)
+    - [Use Template to Create Project](#use-template-to-create-project)
+    - [Coding](#coding)
+    - [Debugging](#debugging)
+      - [Set Up an SFTP Connection](#set-up-an-sftp-connection)
+      - [Debug Code](#debug-code)
+    - [Construct App Release Package](#construct-app-release-package)
+    - [Deploy App on the Web Page](#deploy-app-on-the-web-page)
+    - [Check App Status](#check-app-status)
+    - [Update Configuration File for App](#update-configuration-file-for-app)
+    - [Appendix](#appendix)
+      - [Use pip to Install the Dependent Library for App](#use-pip-to-install-the-dependent-library-for-app)
+      - [Enable Automatic Code Completion](#enable-automatic-code-completion)
+      - [FAQs](#faqs)
+
+<!-- /code_chunk_output -->
+
 ## Building the MobiusPi Development Environment
 ### Prepare Hardware and Network Environment
 #### Connect MobiusPi to the Power Source and to a PC with a Network Cable
