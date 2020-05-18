@@ -16,7 +16,4 @@ Welcome to MobiusPi development platform!
    :maxdepth: 2
    :caption: User manual
 
-   IG501 Quick Start Manual.md
-   IG902 Quick Start Manual.md
-   Docker user manual.md
-   IO Template.md
+   PLC Supervisor用户手册.md
