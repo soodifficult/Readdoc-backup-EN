@@ -44,6 +44,8 @@ Device Supervisor App（以下简称Device Supervisor）为用户提供了便捷
 
 <!-- /code_chunk_output -->
 
+<a id="概览"> </a>  
+
 ## 概览
 使用过程中，您需要准备以下项：  
 - 边缘计算网关IG501/IG902  
@@ -71,6 +73,9 @@ Device Supervisor App（以下简称Device Supervisor）为用户提供了便捷
 <a id="硬件接线"> </a>  
 
 ### 1.1 硬件接线
+
+<a id="以太网接线"> </a>  
+
 #### 1.1.1 以太网接线
 - IG902以太网接线  
   
@@ -81,7 +86,10 @@ Device Supervisor App（以下简称Device Supervisor）为用户提供了便捷
 - IG501以太网接线  
   
   接通IG501的电源并按照拓扑使用以太网线连接IG501和PLC。  <br/>
-![](images/2020-03-12-14-03-03.png)
+![](images/2020-03-12-14-03-03.png)  
+
+<a id="串口接线"> </a>  
+
 #### 1.1.2 串口接线
 - IG902串口接线  
 
@@ -119,7 +127,7 @@ Device Supervisor App（以下简称Device Supervisor）为用户提供了便捷
   使用Device Supervisor时，IG902的固件版本应为`V2.0.0.r12537`及以上；SDK版本应为`py3sdk-V1.3.5`及以上。
 - [更新IG501软件版本](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG501%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#id1)
 
-<a id="配置Plc_Supervisor_App"> </a>  
+<a id="配置device_supervisor_app"> </a>  
 
 ## 2.配置Device Supervisor App
 - [安装并运行Device Supervisor](#安装并运行PLC_Supervisor)
@@ -129,7 +137,7 @@ Device Supervisor App（以下简称Device Supervisor）为用户提供了便捷
   - [配置告警策略](#配置告警策略)
   - [配置变量分组](#配置变量分组)
 
-<a id="安装并运行PLC_Supervisor"> </a>  
+<a id="安装并运行device_supervisor"> </a>  
 
 ### 2.1 安装并运行Device Supervisor
 - IG902如何安装并运行Python App请参考[IG902安装和运行Python App](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#python-app)，Device Supervisor正常运行后如下图所示： 
@@ -138,10 +146,10 @@ Device Supervisor App（以下简称Device Supervisor）为用户提供了便捷
 - IG501如何安装并运行Python App请参考[IG501安装和运行Python App](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG501%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#python-app)，Device Supervisor正常运行后如下图所示：  
   ![](images/2020-02-21-17-57-15.png)  
 
-<a id="PLC_Supervisor数据采集配置"> </a>  
+<a id="device_supervisor数据采集配置"> </a>  
 
 ### 2.2 Device Supervisor数据采集配置
-<a id="添加PLC设备"> </a>  
+<a id="添加plc设备"> </a>  
 
 #### 2.2.1 添加PLC设备
 - 添加ISO on TCP通讯的PLC设备  
@@ -315,7 +323,7 @@ Device Supervisor App（以下简称Device Supervisor）为用户提供了便捷
 
   ![](images/2020-05-12-18-27-57.png)  
 
-<a id="配置变量分组"> </a>  
+<a id="配置分组"> </a>  
 
 #### 2.2.4 配置分组
 如需为变量或告警配置不同的采集间隔或需要按照不同的MQTT主题上报相应的变量数据时，可在“边缘计算 > 设备监控 > 分组”页面添加新分组。  
@@ -343,15 +351,18 @@ Device Supervisor App（以下简称Device Supervisor）为用户提供了便捷
 
   ![](images/2020-05-12-18-52-58.png)  
   
-<a id="监控PLC数据"> </a>  
+<a id="监控plc数据"> </a>  
 
 ## 3.监控PLC数据
 - [本地监控PLC数据](#本地监控PLC数据)
 - [在Thingsboard上监控PLC数据](#在Thingsboard上监控PLC数据)  
   
-<a id="本地监控PLC数据"> </a>  
+<a id="本地监控plc数据"> </a>  
 
 ### 3.1 本地监控PLC数据
+
+<a id="本地监控数据采集"> </a>  
+
 #### 3.1.1 本地监控数据采集
 数据采集配置完成后，可以在“边缘计算 > 设备监控 > 设备列表”页面查看数据采集情况。点击设备列表中的设备卡片可切换需要查看的PLC数据
 ![](images/2020-02-27-17-14-47.png)  
@@ -364,6 +375,8 @@ Device Supervisor App（以下简称Device Supervisor）为用户提供了便捷
 修改成功如下图所示  
 ![](images/2020-03-06-17-01-19.png)
 
+<a id="本地监控告警"> </a>  
+
 #### 3.1.2 本地监控告警
 告警策略配置完成后，可以在“边缘计算 > 设备监控 > 告警”页面查看变量告警情况。
 - 实时告警：查看当前未消除的告警信息
@@ -374,11 +387,16 @@ Device Supervisor App（以下简称Device Supervisor）为用户提供了便捷
   
   ![](images/2020-05-13-09-41-00.png)  
   
-<a id="在Thingsboard上监控PLC数据"> </a>  
+<a id="在thingsboard上监控plc数据"> </a>  
 
 ### 3.2 在Thingsboard上监控PLC数据
+
+<a id="配置thingsboard"> </a>  
+
 #### 3.2.1 配置Thingsboard
 Thingsboard的详细使用方法请查看[Thingsboard入门手册](https://thingsboard.io/docs/getting-started-guides/helloworld/)，您也可以按照[参考流程](#Thingsboard参考流程)进行测试。
+
+<a id="配置云服务"> </a>  
 
 #### 3.2.2 配置云服务
 进入“边缘计算 > 设备监控 > 云服务”页面，勾选启用云服务并配置相应的MQTT连接参数，配置完成后点击提交。
@@ -517,6 +535,8 @@ Device Supervisor的数据采集配置总共包含三个CSV格式的配置文件
   示例配置如下：  
 
   ![](images/2020-03-10-17-15-33.png)
+
+<a id="全局参数"> </a>  
 
 ### 全局参数
 你可以访问“边缘计算 > 设备监控 > 全局参数”页面配置Device Supervisor的通用设置。  
@@ -1243,7 +1263,7 @@ Device Supervisor提供的api接口，包含以下方法：
 ### 其他网关操作
 关于网关的其他常用操作请查看[IG501快速使用手册](http://doc.ig.inhand.com.cn/zh_CN/latest/IG501%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html)或[IG902快速使用手册](http://doc.ig.inhand.com.cn/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html)。
 
-<a id="Thingsboard参考流程"> </a>  
+<a id="thingsboard参考流程"> </a>  
 
 ### Thingsboard参考流程
 - [添加设备和资产](#添加设备和资产)
@@ -1284,7 +1304,7 @@ Device Supervisor提供的api接口，包含以下方法：
 ![](images/2020-02-26-09-56-57.png)  
 &nbsp;
 
-<a id="传输PLC数据到Thingsboard设备"> </a>  
+<a id="传输plc数据到thingsboard设备"> </a>  
   
 #### 传输PLC数据到Thingsboard设备
 资产和设备配置完成后，复制已添加设备的访问令牌并粘贴至网关的云服务页面的用户名参数中以将数据传输至Thingsboard中的ISO on TCP设备。
@@ -1361,6 +1381,7 @@ Device Supervisor提供的api接口，包含以下方法：
   随后可以通过开关下发控制命令以及通过趋势图查看数据趋势。
 ![](images/2020-02-26-10-22-59.png)  
 
+<a id="FAQ"> </a>  
 
 ## FAQ  
 - 查看云服务脚本是否正确  
