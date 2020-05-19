@@ -162,6 +162,7 @@ Device Supervisor App（以下简称Device Supervisor）为用户提供了便捷
 
 #### 2.2.1 添加PLC设备
 - 添加ISO on TCP通讯的PLC设备  
+  
   点击“添加PLC”按钮，在添加设备页面选择PLC协议为“ISO on TCP”并配置PLC的通讯参数。（除PLC为S7-200 Smart时机架号和槽号需要配置为0，1；其余类型的S7系列PLC默认使用0，0即可）<font color=#FF0000>注意：设备名称不能重复。</font>  
 
   ![](images/2020-02-27-14-18-01.png)  
