@@ -11,3 +11,13 @@ img.center{display:block; margin-left:auto; margin-right:auto; text-align: cente
 .wy-nav-content {
     max-width: none;
 }
+.rst-content .section ul li{
+	margin-bottom: 10px !important;
+}
+p {
+    margin-bottom: 10px;
+}
+.rst-content .section ol, .rst-content ol.arabic, article ol {
+    margin-bottom: 10px;
+}
+	
