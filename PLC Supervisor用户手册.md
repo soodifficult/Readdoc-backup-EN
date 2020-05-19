@@ -2,6 +2,7 @@
 Device Supervisor App（以下简称Device Supervisor）为用户提供了便捷的数据采集、数据处理和数据上云功能，支持ISO on TCP、ModbusRTU等多种工业协议解析。
 本手册以采集PLC的数据并上传至Thingsboard云平台为例说明如何通过Device Supervisor App实现PLC数据采集和数据上云。以下将InGateway501简称为“IG501”；InGateway902简称为“IG902”。
 
+
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
@@ -31,10 +32,12 @@ Device Supervisor App（以下简称Device Supervisor）为用户提供了便捷
       - [3.2.2 配置云服务](#322-配置云服务)
   - [附录](#附录)
     - [导入导出配置](#导入导出配置)
+    - [云服务](#云服务)
+      - [启用云服务](#启用云服务)
+      - [高级设置（自定义MQTT发布/订阅）](#高级设置自定义mqtt发布订阅)
+        - [发布](#发布)
+        - [回调函数说明](#回调函数说明)
     - [全局参数](#全局参数)
-    - [自定义数据格式](#自定义数据格式)
-      - [发布](#发布)
-      - [回调函数说明](#回调函数说明)
     - [其他网关操作](#其他网关操作)
     - [Thingsboard参考流程](#thingsboard参考流程)
       - [添加设备和资产](#添加设备和资产)
@@ -43,6 +46,7 @@ Device Supervisor App（以下简称Device Supervisor）为用户提供了便捷
   - [FAQ](#faq)
 
 <!-- /code_chunk_output -->
+
 
 <a id="概览"> </a>  
 
@@ -60,7 +64,7 @@ Device Supervisor App（以下简称Device Supervisor）为用户提供了便捷
 - [监控PLC数据](#监控PLC数据)  
 - [附录](#附录)
 
-![](images/2020-05-12-17-19-17.png)
+![](images/2020-05-18-18-08-55.png)
 
 <a id="准备硬件设备及其数据采集环境"> </a>  
 
@@ -192,35 +196,35 @@ Device Supervisor App（以下简称Device Supervisor）为用户提供了便捷
 - 添加ISO on TCP变量  
   
   点击“添加变量”按钮，在弹出框中配置变量参数：
-  - 变量名：变量名称<font color=#FF0000>（同一设备下变量名称不能重复）</font>    
-  - 寄存器类型：变量寄存器类型，包括I/Q/M/DB四种类型  
-  - DB索引：寄存器类型为DB时变量的DB号  
-  - 地址：变量的寄存器地址  
-  - 数据类型：变量数据类型，包括：  
-    - BOOL：True或False  
-    - BIT：0或1  
-    - BYTE：8位无符号数据  
-    - SINT：8位有符号数据  
-    - WORD：16位无符号数据  
-    - INT：16位有符号数据  
-    - DWORD：32位无符号数据  
-    - DINT：32位有符号数据  
-    - FLOAT：32位浮点数  
-    - STRING：8位字符串  
-    - BCD ：16位BCD码  
-  - 小数位：数据类型为FLOAT时变量小数点后的数据长度，最大6位  
-  - 长度：数据类型为STRING时字符串长度，读取1个字符串的长度为1  
-  - 位：数据类型为BOOL或BIT时变量的位偏移，可输入0~7中任一数字  
-  - 读写权限：  
-    - Read：只读，不可写  
-    - Write：只写，不可读  
-    - Read/Write：可读可写  
-  - 采集模式：  
-    - Realtime：按照所属分组的采集间隔采集变量并按照上报间隔上报数据  
-    - Onchange：变量数值有变化时才采集变量并按照上报间隔上报数据  
-  - 单位：变量单位  
-  - 描述：变量描述  
-  - 所属分组：变量所属的采集组  
+  - `变量名`：变量名称<font color=#FF0000>（同一设备下变量名称不能重复）</font>    
+  - `寄存器类型`：变量寄存器类型，包括`I/Q/M/DB`四种类型  
+  - `DB索引`：寄存器类型为DB时变量的DB号  
+  - `地址`：变量的寄存器地址  
+  - `数据类型`：变量数据类型，包括：  
+    - `BOOL`：True或False  
+    - `BIT`：0或1  
+    - `BYTE`：8位无符号数据  
+    - `SINT`：8位有符号数据  
+    - `WORD`：16位无符号数据  
+    - `INT`：16位有符号数据  
+    - `DWORD`：32位无符号数据  
+    - `DINT`：32位有符号数据  
+    - `FLOAT`：32位浮点数  
+    - `STRING`：8位字符串  
+    - `BCD`：16位BCD码  
+  - `小数位`：数据类型为FLOAT时变量小数点后的数据长度，最大6位  
+  - `长度`：数据类型为STRING时字符串长度，读取1个字符串的长度为1  
+  - `位`：数据类型为BOOL或BIT时变量的位偏移，可输入0~7中任一数字  
+  - `读写权限`：  
+    - `Read`：只读，不可写  
+    - `Write`：只写，不可读  
+    - `Read/Write`：可读可写  
+  - `采集模式`：  
+    - `Realtime`：按照所属分组的采集间隔采集变量并按照上报间隔上报数据  
+    - `Onchange`：变量数值有变化时才采集变量并按照上报间隔上报数据  
+  - `单位`：变量单位  
+  - `描述`：变量描述  
+  - `所属分组`：变量所属的采集组  
    &nbsp;
    
   下图是添加一个地址为%I0.0的开关变量的例子：  </br>
@@ -287,37 +291,37 @@ Device Supervisor App（以下简称Device Supervisor）为用户提供了便捷
 
 你可以进入“边缘计算 > 设备监控 > 告警 > 告警策略”页面中配置告警策略，点击“添加”按钮后，在弹出框中配置告警策略参数。告警策略支持两种配置方式“使用新变量”和“引用已有变量”，参数如下：
 - 使用新变量
-  - 名称：告警名称
-  - 分组：告警所属分组
-  - 变量来源：“使用新变量”即告警变量未在“设备列表”中配置，需要自行设置变量参数（该操作不会在“设备列表”中新增变量）
-  - 设备：告警变量所属设备
-  - 地址：告警变量地址
-  - 数据类型：告警变量数据类型
-  - 告警条件
-    - 判断条件：支持“=”、“!=”、“>”、“≥”、“<”、“≤”
-    - 逻辑条件
-      - 无逻辑条件：仅通过单个判断条件判断告警
-      - &&：通过两个判断条件相与判断告警
-      - ||：通过两个判断条件相或判断告警
-  - 描述：告警描述
+  - `名称`：告警名称
+  - `分组`：告警所属分组
+  - `变量来源`：“使用新变量”即告警变量未在“设备列表”中配置，需要自行设置变量参数（该操作不会在“设备列表”中新增变量）
+  - `设备`：告警变量所属设备
+  - `地址`：告警变量地址
+  - `数据类型`：告警变量数据类型
+  - `告警条件`
+    - `判断条件`：支持“=”、“!=”、“>”、“≥”、“<”、“≤”
+    - `逻辑条件`
+      - `无逻辑条件`：仅通过单个判断条件判断告警
+      - `&&`：通过两个判断条件相与判断告警
+      - `||`：通过两个判断条件相或判断告警
+  - `描述`：告警描述
 
   下图是添加一个告警变量，该变量数值>30且<50时产生告警；不在此范围时不产生告警或告警消除。  
 
   ![](images/2020-05-12-18-22-19.png)  
   
 - 引用已有变量
-  - 名称：告警名称
-  - 分组：告警所属分组
-  - 变量来源：“引用已有变量”即告警变量已在“设备列表”中配置，可以输入已有变量名称直接使用
-  - 设备：告警变量所属设备
-  - 地址：告警变量的地址
-  - 告警条件
-    - 判断条件：支持“=”、“!=”、“>”、“≥”、“<”、“≤”
-    - 逻辑条件
-      - 无逻辑条件：仅通过单个判断条件判断告警
-      - &&：通过两个判断条件相与判断告警
-      - ||：通过两个判断条件相或判断告警
-  - 描述：告警描述
+  - `名称`：告警名称
+  - `分组`：告警所属分组
+  - `变量来源`：“引用已有变量”即告警变量已在“设备列表”中配置，可以输入已有变量名称直接使用
+  - `设备`：告警变量所属设备
+  - `地址`：告警变量的地址
+  - `告警条件`
+    - `判断条件`：支持“=”、“!=”、“>”、“≥”、“<”、“≤”
+    - `逻辑条件`
+      - `无逻辑条件`：仅通过单个判断条件判断告警
+      - `&&`：通过两个判断条件相与判断告警
+      - `||`：通过两个判断条件相或判断告警
+  - `描述`：告警描述
 
   下图是引用已有变量生成一条告警变量，该变量数值>30且<50时产生告警；不在此范围时不产生告警或告警消除。  
 
@@ -329,7 +333,7 @@ Device Supervisor App（以下简称Device Supervisor）为用户提供了便捷
 如需为变量或告警配置不同的采集间隔或需要按照不同的MQTT主题上报相应的变量数据时，可在“边缘计算 > 设备监控 > 分组”页面添加新分组。  
 ![](images/2020-05-12-18-30-02.png)
 
-- 添加采集分组
+- 添加采集分组  
   下图添加了一个名为“group2”的采集分组，该采集分组每5秒采集一次分组中的变量：  
 
   ![](images/2020-05-12-18-37-36.png)  
@@ -340,7 +344,7 @@ Device Supervisor App（以下简称Device Supervisor）为用户提供了便捷
 
   ![](images/2020-02-27-17-06-20.png)
 
-- 添加告警分组
+- 添加告警分组  
   下图添加了一个名为warn_group2的告警分组，该告警分组每5秒检测一次分组中的告警变量是否处于告警状态：  
 
   ![](images/2020-05-12-18-46-20.png)
@@ -400,10 +404,10 @@ Thingsboard的详细使用方法请查看[Thingsboard入门手册](https://thing
 
 #### 3.2.2 配置云服务
 进入“边缘计算 > 设备监控 > 云服务”页面，勾选启用云服务并配置相应的MQTT连接参数，配置完成后点击提交。
-- 服务器地址：`demo.thingsboard.io`
-- 端口号：1883
-- MQTT客户端ID：任一唯一ID
-- MQTT用户名：Thingsboard设备的访问令牌，访问令牌获取方式见[传输PLC数据到Thingsboard设备](#传输PLC数据到Thingsboard设备)
+- `服务器地址`：Thingsboard的demo地址为`demo.thingsboard.io`
+- `端口号`：默认为`1883`
+- `MQTT客户端ID`：任一唯一ID
+- `MQTT用户名`：Thingsboard设备的访问令牌，访问令牌获取方式见[传输PLC数据到Thingsboard设备](#传输PLC数据到Thingsboard设备)
 - MQTT密码：任意6~32位密码
 - 其余项使用默认配置即可  
 
@@ -412,12 +416,12 @@ Thingsboard的详细使用方法请查看[Thingsboard入门手册](https://thing
 
 提交后点击“高级设置”以配置发布和订阅主题。发布和订阅主题的配置方法请参考[自定义数据格式](#自定义数据格式)。
 - 发布主题：
-  - 主题：`v1/devices/me/telemetry`
-  - Qos(MQTT)：`1`
-  - 分组类型：`采集`
-  - 分组：需要上传数据至thingsboard的分组名称，本文档为`default`
-  - 主函数：入口函数名称，本文档为`test_upload`
-  - 脚本：
+  - `主题`：`v1/devices/me/telemetry`
+  - `Qos(MQTT)`：`1`
+  - `分组类型`：`采集`
+  - `分组`：需要上传数据至thingsboard的分组名称，本文档为`default`
+  - `主函数`：入口函数名称，本文档为`test_upload`
+  - `脚本`：
     ```python
     from common.Logger import logger #导入打印日志模块logger
     
@@ -436,10 +440,10 @@ Thingsboard的详细使用方法请查看[Thingsboard入门手册](https://thing
   ![](images/2020-05-16-19-36-03.png)
 
 - 订阅主题
-  - 主题：`v1/devices/me/rpc/request/+`
-  - Qos(MQTT)：`1`
-  - 主函数：入口函数名称，本文档为`ctl_test`
-  - 脚本：
+  - `主题`：`v1/devices/me/rpc/request/+`
+  - `Qos(MQTT)`：`1`
+  - `主函数`：入口函数名称，本文档为`ctl_test`
+  - `脚本`：
     ```python
     from common.Logger import logger #导入打印日志模块logger
     import json #导入json模块
@@ -477,56 +481,57 @@ Thingsboard的详细使用方法请查看[Thingsboard入门手册](https://thing
 ### 导入导出配置
 Device Supervisor的数据采集配置总共包含三个CSV格式的配置文件，您可以通过导入导出配置文件快速实现采集配置。各配置文件内容如下：
 - device.csv：设备配置文件,详细参数如下
-  - device_name：设备名称
-  - protocol：通讯协议名称，如`ModbusTCP`
-  - ip/serial：以太网设备填写ip地址；串口设备填写RS485或RS232
-  - port：以太网设备的通讯端口号
-  - rack（仅ISO on TCP设备）：设备机架号
-  - slot（仅ISO on TCP设备）：设备槽号
-  - slave（仅Modbus设备）：从站地址
-  - byte_order（仅Modbus设备）：字节序  
+  - `Device Name`：设备名称
+  - `Protocol`：通讯协议名称，如`ModbusTCP`
+  - `Ip/Serial`：以太网设备填写ip地址；串口设备填写`RS485`或`RS232`
+  - `Port`：以太网设备的通讯端口号
+  - `Rack`（仅ISO on TCP设备）：设备机架号
+  - `Slot`（仅ISO on TCP设备）：设备槽号
+  - `Slave`（仅Modbus设备）：从站地址
+  - `Byte Order`（仅Modbus设备）：字节序，包括`abcd`、`badc`、`cdab`、`dcba`  
 
   导出方式为设备列表页面的设备列表导出
   ![](images/2020-03-10-17-17-06.png)  
 
   示例配置如下：  
 
-  ![](images/2020-03-10-17-15-00.png)  
+  ![](images/2020-05-18-19-35-56.png)  
 
   &nbsp;
   </br>
   
 - var.csv:变量配置文件，详细参数如下
-  - var_name：变量名称
-  - device：变量所属设备
-  - protocol：通讯协议名称
-  - dbnumber（仅ISO on TCP设备）：DB号
-  - register_type（仅ISO on TCP设备）：寄存器类型，如`DB`
-  - register_addr：寄存器地址
-  - register_bit：位偏移
-  - data_type：数据类型
-  - read_write：读写权限，包括`Read/Write`、`Write`、`Read`
-  - float_repr：小数位，1~6
-  - mode：采集模式，包括`realtime`、`onchange`
-  - unit：单位
-  - size：字符串长度
-  - desc：描述
-  - group：所属分组  
+  - `Var Name`：变量名称
+  - `Device`：变量所属设备
+  - `Protocol`：通讯协议名称
+  - `Dbnumber`（仅ISO on TCP设备）：DB号
+  - `Register Type`（仅ISO on TCP设备）：寄存器类型，如`DB`
+  - `Register Addr`：寄存器地址
+  - `Register Bit`：位偏移
+  - `Data Type`：数据类型
+  - `Read Write`：读写权限，包括`Read/Write`、`Write`、`Read`
+  - `Float Repr`：小数位，`1~6`
+  - `Mode`：采集模式，包括`realtime`、`onchange`
+  - `Unit`：单位
+  - `Size`：字符串长度
+  - `Desc`：描述
+  - `Group`：所属分组  
 
   导出方式为设备列表页面的变量列表导出
   ![](images/2020-03-10-17-18-01.png)  
 
   示例配置如下：  
 
-  ![](images/2020-03-10-17-13-54.png)  
+  ![](images/2020-05-18-19-43-09.png)  
 
   &nbsp;
   </br>
   
 - group.csv:分组配置文件，详细参数如下
-  - group_name：分组名称
-  - polling_interval：采集间隔
-  - upload_interval：上传间隔  
+  - `Group Name`：分组名称
+  - `Polling Interval`：采集间隔
+  - `Upload Interval`：上传间隔。分组类型为`alarm`时此项为空即可  
+  - `Group Type`：分组类型，支持`alarm`和`collect`
  &nbsp;
 
   导出方式为分组页面的分组导出  </br>
@@ -534,38 +539,36 @@ Device Supervisor的数据采集配置总共包含三个CSV格式的配置文件
 
   示例配置如下：  
 
-  ![](images/2020-03-10-17-15-33.png)
+  ![](images/2020-05-18-19-44-22.png)
 
-<a id="全局参数"> </a>  
+### 云服务
 
-### 全局参数
-你可以访问“边缘计算 > 设备监控 > 全局参数”页面配置Device Supervisor的通用设置。  
-- 全局参数  
-  你可以在全局参数中设置Device Supervisor的系统参数或者自行添加通配符参数  
-  - `catch_recording`：最大可缓存的变量数据的MQTT消息数量，默认为`100000`  
-  - `log_level`：日志等级，设置不同的日志等级可以在Device Supervisor的日志中看到不同等级的日志信息。默认为`INFO`  
-  - `warning_recording`：最大可缓存的告警数据的MQTT消息数量，默认为`2000`  
-  - `自定义通配符`：你可以自行添加全局参数作为云服务中的通配符使用。使用方法为`${参数名称}`，如下图所示：  
-    ![](images/2020-05-16-15-34-08.png)  
+您可以在“边缘计算 > 设备监控 > 云服务”配置你的MQTT连接参数，并支持通过高级设置功能配置上报数据的MQTT主题、数据来源等参数并支持使用Python语言自定义MQTT发布和订阅主题的数据上报、处理等逻辑。无需二次开发即可实现与多种MQTT服务器进行数据上传和下发。
+#### 启用云服务
+启用云服务包含以下配置：
+- `启用云服务`：启用/禁用云服务
+- `服务器地址`：MQTT服务器地址
+- `端口号`：MQTT端口号，默认为`1883`
+- `MQTT客户端ID`：MQTT客户端ID
+- `启用用户验证`：启用/禁用用户验证
+  - `MQTT用户名`：启用用户验证后，需要配置用户验证所需的用户名
+  - `MQTT密码`：启用用户验证后，需要配置用户验证所需的密码
+- `MQTT心跳间隔`：MQTT心跳间隔时间，默认为`60`秒
+- `TLS加密`：开启/关闭TLS加密，开启后需要导入相应的证书文件
+- `清除Session`：选择MQTT连接断开后session是否清除
+- `MQTT版本`：MQTT版本，支持`MQTTv31`和`MQTTv311`，默认为`MQTTv311`
 
-    ![](images/2020-05-16-15-20-49.png)   
 
-- 串口设置  
-  你可以在串口设置中配置RS485和RS232串口的通讯参数，如下图所示：  
+<a id="高级设置（自定义MQTT发布/订阅）"> </a>  
 
-  ![](images/2020-05-18-17-14-19.png)  
-
-<a id="自定义数据格式"> </a>  
-
-### 自定义数据格式
+#### 高级设置（自定义MQTT发布/订阅）
 - [发布](#发布)
 - [订阅](#订阅)  
-  
-您可使用云服务中的高级设置功能配置MQTT主题、上报数据等参数并支持使用Python语言自定义MQTT发布和订阅主题的数据上报、处理等逻辑。无需二次开发即可实现与多种MQTT服务器进行数据上传和下发。
+
 
 <a id="发布"> </a>  
 
-#### 发布
+##### 发布
 自定义发布主题中包含以下配置项：
 - `名称`：用户自定义发布名称
 - `主题`：发布主题，与MQTT服务器订阅的主题保持一致
@@ -916,7 +919,7 @@ Device Supervisor的数据采集配置总共包含三个CSV格式的配置文件
 
 <a id="订阅"> </a>  
 
-#### 订阅
+##### 订阅
 自定义订阅中包含以下项：
 - `名称`：自定义订阅名称
 - `主题`：订阅主题，与MQTT服务器发布的数据主题保持一致
@@ -1041,7 +1044,7 @@ Device Supervisor的数据采集配置总共包含三个CSV格式的配置文件
 
 <a id="device-supervisor-api-description"> </a>  
 
-#### Device Supervisor的api接口说明
+##### Device Supervisor的api接口说明
 Device Supervisor提供的api接口，包含以下方法：
 - `mqtt_publish`：MQTT发布消息方法，用于将指定数据通过相应的主题发送到MQTT服务器并返回发送结果：发送成功（True），发送失败（False），使用示例请参考[发布示例3](#pub-example3)。该方法包含以下参数：  
   - `参数1`：MQTT主题，数据类型为`string`。通过至该主题发送数据到MQTT服务器  
@@ -1099,7 +1102,7 @@ Device Supervisor提供的api接口，包含以下方法：
 
 <a id="callback-function-description"> </a>  
 
-#### 回调函数说明
+##### 回调函数说明
 1. `write_plc_values`回调函数说明  
 `write_plc_values`回调函数包含以下参数：
     - `参数1`: `write_plc_values`方法的写入结果
@@ -1257,6 +1260,26 @@ Device Supervisor提供的api接口，包含以下方法：
     - `参数2`：`write_plc_values`方法中配置的`参数3`，如果未在`write_plc_values`中配置`参数3`，则该参数为`None`
 
     - `参数3`：该参数为Device Supervisor提供的api接口，参数说明见[Device Supervisor的api接口说明](#device-supervisor-api-description)   
+
+<a id="全局参数"> </a>  
+
+### 全局参数
+你可以访问“边缘计算 > 设备监控 > 全局参数”页面配置Device Supervisor的通用设置。  
+- 全局参数  
+  你可以在全局参数中设置Device Supervisor的系统参数或者自行添加通配符参数  
+  - `catch_recording`：最大可缓存的变量数据的MQTT消息数量，默认为`100000`  
+  - `log_level`：日志等级，设置不同的日志等级可以在Device Supervisor的日志中看到不同等级的日志信息。默认为`INFO`  
+  - `warning_recording`：最大可缓存的告警数据的MQTT消息数量，默认为`2000`  
+  - `自定义通配符`：你可以自行添加全局参数作为云服务中的通配符使用。使用方法为`${参数名称}`，如下图所示：  
+    ![](images/2020-05-16-15-34-08.png)  
+
+    ![](images/2020-05-16-15-20-49.png)   
+
+- 串口设置  
+  你可以在串口设置中配置RS485和RS232串口的通讯参数，如下图所示：  
+
+  ![](images/2020-05-18-17-14-19.png)  
+
 
 <a id="其他网关操作"> </a>  
 
