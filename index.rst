@@ -10,7 +10,7 @@ Welcome to MobiusPi development platform!
    :maxdepth: 2
    :caption: Developer Guide
 
-   QuickStart.md
+   MobiusPi Python QuickStart.md
 
 .. toctree::
    :maxdepth: 2
