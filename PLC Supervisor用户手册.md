@@ -47,6 +47,9 @@ Device Supervisor App（以下简称Device Supervisor）为用户提供了便捷
 - PLC设备  
 - 网线/串口线  
 - *更新软件版本所需的固件、SDK和App  
+  - 固件版本：V2.0.0.r12622及以上
+  - SDK版本：py3sdk-V1.3.7及以上
+  - App版本：1.1.2及以上
 - *Thingsboad演示账号  
 
 整体流程如下图所示：  
