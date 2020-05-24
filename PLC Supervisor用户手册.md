@@ -58,10 +58,10 @@ Device Supervisor App（以下简称Device Supervisor）为用户提供了便捷
 
 ## 1.准备硬件设备及其数据采集环境
 
-  - [1.1 硬件接线](#11-硬件接线)
-  - [1.2 设置LAN网络参数：在局域网访问PLC](#12-设置lan网络参数在局域网访问plc)
-  - [1.3 设置WAN网络参数：传输数据至MQTT服务器](#13-设置wan网络参数传输数据至mqtt服务器)
-  - [1.4 更新InGateway设备软件版本](#14-更新ingateway设备软件版本)
+  - [1.1 硬件接线](#硬件接线)
+  - [1.2 设置LAN网络参数：在局域网访问PLC](#设置lan网络参数在局域网访问plc)
+  - [1.3 设置WAN网络参数：传输数据至MQTT服务器](#设置wan网络参数传输数据至mqtt服务器)
+  - [1.4 更新InGateway设备软件版本](#更新ingateway设备软件版本)
 
 <a id="硬件接线"> </a>  
 
@@ -147,10 +147,10 @@ Device Supervisor App（以下简称Device Supervisor）为用户提供了便捷
 
 ### 2.2 Device Supervisor数据采集配置
 
-  - [2.2.1 添加PLC设备](#221-添加plc设备)
-  - [2.2.2 添加变量](#222-添加变量)
-  - [2.2.3 配置告警策略](#223-配置告警策略)
-  - [2.2.4 配置分组](#224-配置分组)
+  - [2.2.1 添加PLC设备](#添加plc设备)
+  - [2.2.2 添加变量](#添加变量)
+  - [2.2.3 配置告警策略](#配置告警策略)
+  - [2.2.4 配置分组](#配置分组)
 
 <a id="添加plc设备"> </a>  
 
@@ -366,15 +366,15 @@ Device Supervisor App（以下简称Device Supervisor）为用户提供了便捷
 
 ## 3.监控PLC数据 
   
-  - [3.1 本地监控PLC数据](#31-本地监控plc数据)
-  - [3.2 在Thingsboard上监控PLC数据](#32-在thingsboard上监控plc数据)
+  - [3.1 本地监控PLC数据](#本地监控plc数据)
+  - [3.2 在Thingsboard上监控PLC数据](#在thingsboard上监控plc数据)
 
 <a id="本地监控plc数据"> </a>  
 
 ### 3.1 本地监控PLC数据
 
-  - [3.1.1 本地监控数据采集](#311-本地监控数据采集)
-  - [3.1.2 本地监控告警](#312-本地监控告警)
+  - [3.1.1 本地监控数据采集](#本地监控数据采集)
+  - [3.1.2 本地监控告警](#本地监控告警)
 
 <a id="本地监控数据采集"> </a>  
 
@@ -409,8 +409,8 @@ Device Supervisor App（以下简称Device Supervisor）为用户提供了便捷
 
 ### 3.2 在Thingsboard上监控PLC数据
 
-  - [3.2.1 配置Thingsboard](#321-配置thingsboard)
-  - [3.2.2 配置云服务](#322-配置云服务)
+  - [3.2.1 配置Thingsboard](#配置thingsboard)
+  - [3.2.2 配置云服务](#配置云服务)
 
 <a id="配置thingsboard"> </a>  
 
