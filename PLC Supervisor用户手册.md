@@ -30,7 +30,7 @@ Device Supervisor App（以下简称Device Supervisor）为用户提供了便捷
       - [发布](#发布)
       - [订阅](#订阅)
       - [Device Supervisor的api接口说明](#device_supervisor_api_description)
-      - [回调函数说明](#recall-data-callback-function-description)
+      - [回调函数说明](#callback-function-description)
     - [全局参数](#全局参数)
     - [其他网关操作](#其他网关操作)
     - [Thingsboard参考流程](#thingsboard参考流程)
@@ -128,8 +128,8 @@ Device Supervisor App（以下简称Device Supervisor）为用户提供了便捷
 
 ## 2.配置Device Supervisor App
 
-  - [2.1 安装并运行Device Supervisor](#21-安装并运行device_supervisor)
-  - [2.2 Device Supervisor数据采集配置](#22-device_supervisor数据采集配置)
+  - [2.1 安装并运行Device Supervisor](#安装并运行device_supervisor)
+  - [2.2 Device Supervisor数据采集配置](#device_supervisor数据采集配置)
 
 
 <a id="安装并运行device_supervisor"> </a>  
@@ -564,8 +564,8 @@ Device Supervisor的数据采集配置总共包含三个CSV格式的配置文件
 
   - [发布](#发布)
   - [订阅](#订阅)
-  - [Device Supervisor的api接口说明](#device_supervisor的api接口说明)
-  - [回调函数说明](#回调函数说明) 
+  - [Device Supervisor的api接口说明](#device_supervisor_api_description)
+  - [回调函数说明](#callback-function-description)
 
 <a id="发布"> </a>  
 
@@ -1119,7 +1119,7 @@ Device Supervisor提供的api接口，包含以下方法：
 
 <a id="write-plc-values-callback-function-description"> </a>  
 
-1. `write_plc_values`回调函数说明  
+- `write_plc_values`回调函数说明  
 `write_plc_values`回调函数包含以下参数，使用示例请参考[订阅示例3](#sub-example3)：
     - `参数1`: `write_plc_values`方法的写入结果
       - 写入超时时返回值为
@@ -1153,7 +1153,7 @@ Device Supervisor提供的api接口，包含以下方法：
 
 <a id="get-tag-config-callback-function-description"> </a>  
 
-2. `get_tag_config`回调函数说明  
+- `get_tag_config`回调函数说明  
 `get_tag_config`回调函数包含以下参数，使用示例请参考[发布示例5](#pub-example5)：
     - `参数1`: `get_tag_config`方法返回的点表配置。获取点表超时时返回值为`("error", -110, "timeout")`，正常返回点表配置时数据格式如下：  
       ```python
@@ -1252,7 +1252,7 @@ Device Supervisor提供的api接口，包含以下方法：
 
 <a id="recall-data-callback-function-description"> </a>  
 
-3. `recall_data`回调函数说明  
+- `recall_data`回调函数说明  
   `recall_data`回调函数包含以下参数[订阅示例4](#sub-example4)：
     - `参数1`: `recall_data`方法返回的变量数据。获取变量数据超时时返回值为`("error", -110, "timeout")`，正常返回变量数据时数据格式如下：
       ```python
