@@ -7,12 +7,12 @@ Device Supervisor App（以下简称Device Supervisor）为用户提供了便捷
     - [1.1 硬件接线](#硬件接线)
       - [1.1.1 以太网接线](#以太网接线)
       - [1.1.2 串口接线](#串口接线)
-    - [1.2 设置LAN网络参数：在局域网访问PLC](#设置lan网络参数在局域网访问plc)
-    - [1.3 设置WAN网络参数：传输数据至MQTT服务器](#设置wan网络参数传输数据至mqtt服务器)
-    - [1.4 更新InGateway设备软件版本](#更新ingateway设备软件版本)
-  - [2.配置Device Supervisor App](#配置device-supervisor-app)
-    - [2.1 安装并运行Device Supervisor](#安装并运行device-supervisor)
-    - [2.2 Device Supervisor数据采集配置](#device-supervisor数据采集配置)
+    - [1.2 设置LAN网络参数：在局域网访问PLC](#设置LAN网络参数)
+    - [1.3 设置WAN网络参数：传输数据至MQTT服务器](#设置WAN网络参数)
+    - [1.4 更新InGateway设备软件版本](#更新InGateway设备软件版本)
+  - [2.配置Device Supervisor App](#配置device_supervisor_app)
+    - [2.1 安装并运行Device Supervisor](#安装并运行device_supervisor)
+    - [2.2 Device Supervisor数据采集配置](#device_supervisor数据采集配置)
       - [2.2.1 添加PLC设备](#添加plc设备)
       - [2.2.2 添加变量](#添加变量)
       - [2.2.3 配置告警策略](#配置告警策略)
@@ -29,7 +29,7 @@ Device Supervisor App（以下简称Device Supervisor）为用户提供了便捷
     - [高级设置（自定义MQTT发布/订阅）](#高级设置自定义mqtt发布订阅)
       - [发布](#发布)
       - [订阅](#订阅)
-      - [Device Supervisor的api接口说明](#device-supervisor的api接口说明)
+      - [Device Supervisor的api接口说明](#device_supervisor的api接口说明)
       - [回调函数说明](#回调函数说明)
     - [全局参数](#全局参数)
     - [其他网关操作](#其他网关操作)
@@ -59,9 +59,9 @@ Device Supervisor App（以下简称Device Supervisor）为用户提供了便捷
 ## 1.准备硬件设备及其数据采集环境
 
   - [1.1 硬件接线](#硬件接线)
-  - [1.2 设置LAN网络参数：在局域网访问PLC](#设置lan网络参数在局域网访问plc)
-  - [1.3 设置WAN网络参数：传输数据至MQTT服务器](#设置wan网络参数传输数据至mqtt服务器)
-  - [1.4 更新InGateway设备软件版本](#更新ingateway设备软件版本)
+  - [1.2 设置LAN网络参数：在局域网访问PLC](#设置LAN网络参数)
+  - [1.3 设置WAN网络参数：传输数据至MQTT服务器](#设置WAN网络参数)
+  - [1.4 更新InGateway设备软件版本](#更新InGateway设备软件版本)
 
 <a id="硬件接线"> </a>  
 
@@ -128,8 +128,8 @@ Device Supervisor App（以下简称Device Supervisor）为用户提供了便捷
 
 ## 2.配置Device Supervisor App
 
-  - [2.1 安装并运行Device Supervisor](#21-安装并运行device-supervisor)
-  - [2.2 Device Supervisor数据采集配置](#22-device-supervisor数据采集配置)
+  - [2.1 安装并运行Device Supervisor](#21-安装并运行device_supervisor)
+  - [2.2 Device Supervisor数据采集配置](#22-device_supervisor数据采集配置)
 
 
 <a id="安装并运行device_supervisor"> </a>  
@@ -564,7 +564,7 @@ Device Supervisor的数据采集配置总共包含三个CSV格式的配置文件
 
   - [发布](#发布)
   - [订阅](#订阅)
-  - [Device Supervisor的api接口说明](#device-supervisor的api接口说明)
+  - [Device Supervisor的api接口说明](#device_supervisor的api接口说明)
   - [回调函数说明](#回调函数说明) 
 
 <a id="发布"> </a>  
@@ -626,7 +626,7 @@ Device Supervisor的数据采集配置总共包含三个CSV格式的配置文件
       }
       ```  
 
-  - `参数2`：该参数为Device Supervisor提供的api接口，参数说明见[Device Supervisor的api接口说明](#device-supervisor-api-description)  
+  - `参数2`：该参数为Device Supervisor提供的api接口，参数说明见[Device Supervisor的api接口说明](#device_supervisor-api-description)  
 
 以下是常见的自定义发布方法示例<font color=#FF0000>（请勿将`mqtt_publish`或`save_data`方法与`return`命令同时使用）</font>：
 
@@ -935,7 +935,7 @@ Device Supervisor的数据采集配置总共包含三个CSV格式的配置文件
 - `脚本`：使用Python代码自定义组包和处理逻辑，订阅中的主函数参数包括：
   - `参数1`：该参数为接收到的主题，数据类型为`string`
   - `参数2`：该参数为接收到的数据，数据类型为`string`
-  - `参数3`：该参数为Device Supervisor提供的api接口，参数说明见[Device Supervisor的api接口说明](#device-supervisor-api-description)  
+  - `参数3`：该参数为Device Supervisor提供的api接口，参数说明见[Device Supervisor的api接口说明](#device_supervisor_api_description)  
 
 以下是三个常见的自定义订阅方法示例：
 
@@ -1055,7 +1055,7 @@ Device Supervisor的数据采集配置总共包含三个CSV格式的配置文件
       wizard_api.mqtt_publish("v1/xxx/yyy", json.dumps(value_list), 1) #调用wizard_api模块中的mqtt_publish方法将value_list数据通过主题“v1/xxx/yyy”，qos等级1发送至MQTT服务器
   ```
 
-<a id="device-supervisor-api-description"> </a>  
+<a id="device_supervisor_api_description"> </a>  
 
 #### Device Supervisor的api接口说明
 Device Supervisor提供的api接口，包含以下方法：
@@ -1149,7 +1149,7 @@ Device Supervisor提供的api接口，包含以下方法：
         }]
         ```
     - `参数2`：`write_plc_values`方法中配置的`参数3`，如果未在`write_plc_values`中配置`参数3`，则该参数为`None`
-    - `参数3`：该参数为Device Supervisor提供的api接口，参数说明见[Device Supervisor的api接口说明](#device-supervisor-api-description)  
+    - `参数3`：该参数为Device Supervisor提供的api接口，参数说明见[Device Supervisor的api接口说明](#device_supervisor_api_description)  
 
 <a id="get-tag-config-callback-function-description"> </a>  
 
@@ -1248,7 +1248,7 @@ Device Supervisor提供的api接口，包含以下方法：
       ```
 
     - `参数2`：`get_tag_config`方法中配置的`参数3`，如果未在`get_tag_config`中配置`参数3`，则该参数为`None`
-    - `参数3`：该参数为Device Supervisor提供的api接口，参数说明见[Device Supervisor的api接口说明](#device-supervisor-api-description)  
+    - `参数3`：该参数为Device Supervisor提供的api接口，参数说明见[Device Supervisor的api接口说明](#device_supervisor_api_description)  
 
 <a id="recall-data-callback-function-description"> </a>  
 
@@ -1279,7 +1279,7 @@ Device Supervisor提供的api接口，包含以下方法：
 
     - `参数2`：`recall_data`方法中配置的`参数3`，如果未在`recall_data`中配置`参数3`，则该参数为`None`
 
-    - `参数3`：该参数为Device Supervisor提供的api接口，参数说明见[Device Supervisor的api接口说明](#device-supervisor-api-description)   
+    - `参数3`：该参数为Device Supervisor提供的api接口，参数说明见[Device Supervisor的api接口说明](#device_supervisor_api_description)   
 
 <a id="全局参数"> </a>  
 
