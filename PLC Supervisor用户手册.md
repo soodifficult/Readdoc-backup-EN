@@ -626,7 +626,7 @@ Device Supervisor的数据采集配置总共包含三个CSV格式的配置文件
       }
       ```  
 
-  - `参数2`：该参数为Device Supervisor提供的api接口，参数说明见[Device Supervisor的api接口说明](#device_supervisor-api-description)  
+  - `参数2`：该参数为Device Supervisor提供的api接口，参数说明见[Device Supervisor的api接口说明](#device_supervisor_api_description)  
 
 以下是常见的自定义发布方法示例<font color=#FF0000>（请勿将`mqtt_publish`或`save_data`方法与`return`命令同时使用）</font>：
 
