@@ -29,7 +29,7 @@ Device Supervisor App（以下简称Device Supervisor）为用户提供了便捷
     - [高级设置（自定义MQTT发布/订阅）](#高级设置自定义mqtt发布订阅)
       - [发布](#发布)
       - [订阅](#订阅)
-      - [Device Supervisor的api接口说明](#device_supervisor的api接口说明)
+      - [Device Supervisor的api接口说明](#device_supervisor_api_description)
       - [回调函数说明](#回调函数说明)
     - [全局参数](#全局参数)
     - [其他网关操作](#其他网关操作)
