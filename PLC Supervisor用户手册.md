@@ -516,6 +516,7 @@ Device Supervisor的数据采集配置总共包含三个CSV格式的配置文件
   - `Port`：以太网设备的通讯端口号
   - `Rack`（仅ISO on TCP设备）：设备机架号
   - `Slot`（仅ISO on TCP设备）：设备槽号
+  - `Mode`（仅ISO on TCP设备）：ISO on TCP模式，包括`TSAP`和`Rack/Slot`
   - `Slave`（仅Modbus设备）：从站地址
   - `Byte Order`（仅Modbus设备）：字节序，包括`abcd`、`badc`、`cdab`、`dcba`  
 
