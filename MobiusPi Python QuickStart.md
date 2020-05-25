@@ -1,21 +1,23 @@
 # **MobiusPi Python开发快速入门**
-北京映翰通网络技术股份有限公司的InGateway系列产品包含两个大的产品系列，InGateway902和InGateway501系列，以下文档中将InGateway501简称为“IG501”；InGateway902简称为“IG902”。  
+北京映翰通网络技术股份有限公司的InGateway系列产品包含两个大的产品系列，InGateway902和InGateway501系列，以下文档中将InGateway501简称为“IG501”；InGateway902简称为“IG902”。  </br>
 MobiusPi是InGateway系列产品二次开发平台的名称，本文档旨在为用户说明如何利用MobiusPi进行基于Python的二次开发。
 
-  - [1. 搭建MobiusPi开发环境](#1-搭建mobiuspi开发环境)
-    - [1.1 准备硬件设备及其网络环境](#11-准备硬件设备及其网络环境)
-    - [1.2 安装PC上需要的软件](#12-安装pc上需要的软件)
-    - [1.3 准备VS Code开发环境](#13-准备vs-code开发环境)
-  - [2. 编写第一个MobiusPi App：Hello World](#2-编写第一个mobiuspi-apphello-world)
-    - [2.1 使用模板创建工程](#21-使用模板创建工程)
-    - [2.2 编码](#22-编码)
-    - [2.3 调试](#23-调试)
-    - [2.4 构建App发布包](#24-构建app发布包)
-    - [2.5 通过MobiusPi Web页面部署App](#25-通过mobiuspi-web页面部署app)
-    - [2.6 查看App运行状态](#26-查看app运行状态)
-    - [2.7 为App更新配置文件](#27-为app更新配置文件)
-    - [2.8 附录](#28-附录)
+  - [1. 搭建MobiusPi开发环境](#build-a-mobiuspi-development-environment)
+    - [1.1 准备硬件设备及其网络环境](#prepare-hardware-equipment-and-its-network-environment)
+    - [1.2 安装PC上需要的软件](#install-the-required-software-on-the-pc)
+    - [1.3 准备VS Code开发环境](#prepare-vs-code-development-environment)
+  - [2. 编写第一个MobiusPi App：Hello World](#write-the-mobiuspi-app-hello-world)
+    - [2.1 使用模板创建工程](#create-a-project-using-a-template)
+    - [2.2 编码](#coding)
+    - [2.3 调试](#debug)
+    - [2.4 构建App发布包](#build-app)
+    - [2.5 通过MobiusPi Web页面部署App](#deploy-app-via-mobiuspi-web-page)
+    - [2.6 查看App运行状态](#view-the-running-status-of-the-app)
+    - [2.7 为App更新配置文件](#update-configuration-file-for-app)
+    - [2.8 附录](#appendix)
   - [FAQ](#faq)
+
+<a id="build-a-mobiuspi-development-environment"> </a>  
 
 ## 1. 搭建MobiusPi开发环境
 在进行开发前，您需要具备以下条件：
@@ -38,17 +40,21 @@ MobiusPi是InGateway系列产品二次开发平台的名称，本文档旨在为
 
 如果您的MobiusPi和PC已经满足了以上所有条件，则可以跳过这一小节。否则请参考以下说明准备开发环境。 
 
-- [1.1 准备硬件设备及其网络环境](#11-准备硬件设备及其网络环境)
-- [1.2 安装PC上需要的软件](#12-安装pc上需要的软件)
-- [1.3 准备VS Code开发环境](#13-准备vs-code开发环境)
+- [1.1 准备硬件设备及其网络环境](#prepare-hardware-equipment-and-its-network-environment)
+- [1.2 安装PC上需要的软件](#install-the-required-software-on-the-pc)
+- [1.3 准备VS Code开发环境](#prepare-vs-code-development-environment)
+
+<a id="prepare-hardware-equipment-and-its-network-environment"> </a>  
 
 ### 1.1 准备硬件设备及其网络环境
 
-- [1.1.1 接通电源并使用网线连接PC](#111-接通电源并使用网线连接pc)
-- [1.1.2 设置LAN网络参数](#112-设置lan网络参数)
-- [1.1.3 设置WAN网络参数](#113-设置wan网络参数)
-- [1.1.4 更新软件版本](#114-更新软件版本)
-- [1.1.5 启用MobiusPi的调试模式](#115-启用mobiuspi的调试模式)
+- [1.1.1 接通电源并使用网线连接PC](#turn-on-the-power-and-use-a-network-cable-to-connect-to-the-pc)
+- [1.1.2 设置LAN网络参数](#set-lan-network-parameters)
+- [1.1.3 设置WAN网络参数](#set-wan-network-parameters)
+- [1.1.4 更新软件版本](#update-ingateway-device-software-version)
+- [1.1.5 启用MobiusPi的调试模式](#enable-mobiuspi-debug-mode)
+ 
+<a id="turn-on-the-power-and-use-a-network-cable-to-connect-to-the-pc"> </a>
 
 #### 1.1.1 接通电源并使用网线连接PC
 - 准备IG501硬件设备  
@@ -63,33 +69,48 @@ MobiusPi是InGateway系列产品二次开发平台的名称，本文档旨在为
 
   ![](images/2020-02-17-17-53-43.png)  
 
+<a id="set-lan-network-parameters"> </a>  
+
 #### 1.1.2 设置LAN网络参数
 - 设置IG501LAN网络参数，请参考[在局域网访问IG501](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG501%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#lan-ig501)。  
 - 设置IG902LAN网络参数，请参考[在局域网访问IG902](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#lan-ig902)。
+
+<a id="set-wan-network-parameters"> </a>  
 
 #### 1.1.3 设置WAN网络参数
 - 设置IG501 WAN网络参数，请参考[IG501连接Internet](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG501%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#wan-internet)。  
 - 设置IG902 WAN网络参数，请参考[IG902连接Internet](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#wan-internet)。
 
+<a id="update-ingateway-device-software-version"> </a>  
+
 #### 1.1.4 更新软件版本
 如需获取MobiusPi最新软件版本及其功能特性信息，请联系客服。如需更新软件版本，请参考如下链接：  
 - [更新IG501软件版本](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG501%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#id1)  
 - [更新IG902软件版本](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#id1)
+
+<a id="enable-mobiuspi-debug-mode"> </a>  
+
 #### 1.1.5 启用MobiusPi的调试模式
 开发过程中，为了在MobiusPi上运行并调试Python代码，需要启用MobiusPi的调试模式。
 - [启用IG501调试模式](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG501%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#id3)
-- [启用IG902调试模式](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#id3)
+- [启用IG902调试模式](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#id3)  
+
+<a id="install-the-required-software-on-the-pc"> </a>  
 
 ### 1.2 安装PC上需要的软件
 
-- [1.2.1 安装Python解释器](#121-安装python解释器)
-- [1.2.2 安装Visual Studio Code软件](#122-安装visual-studio-code软件)
-- [1.2.3 安装OpenSSH](#123-安装openssh)
+- [1.2.1 安装Python解释器](#install-the-python-interpreter)
+- [1.2.2 安装Visual Studio Code软件](#install-visual-studio-code-software)
+- [1.2.3 安装OpenSSH](#install-openssh)  
+
+<a id="install-the-python-interpreter"> </a>  
 
 #### 1.2.1 安装Python解释器
 在开发过程中PC需具备Python2.7.X或3.7.X解释器（建议使用3.7.X解释器），您可以访问 [https://www.python.org/downloads/](https://www.python.org/downloads/) 下载相应的安装包并安装至PC。  
 
-![](./images/2019-11-08-16-03-16.png)
+![](./images/2019-11-08-16-03-16.png)  
+
+<a id="install-visual-studio-code-software"> </a>  
 
 #### 1.2.2 安装Visual Studio Code软件
 您可以访问：[https://code.visualstudio.com/Download](https://code.visualstudio.com/Download) 获取相应的Visual Studio Code软件（以下简称VS Code）。  
@@ -100,20 +121,26 @@ MobiusPi是InGateway系列产品二次开发平台的名称，本文档旨在为
 
 ![](./images/2019-11-29-15-35-23.png)
 
+<a id="install-openssh"> </a>  
+
 #### 1.2.3 安装OpenSSH
 您可以在命令提示符中输入`ssh`命令查看PC是否支持SSH协议，当PC支持SSH协议时如下图所示：  
 
 ![](images/2020-05-09-15-17-26.png)  
 
-如果PC不支持SSH协议，您可以访问：[https://www.openssh.com](https://www.openssh.com) 获取相应的OpenSSH工具并安装至PC。
+如果PC不支持SSH协议，您可以访问：[https://www.openssh.com](https://www.openssh.com) 获取相应的OpenSSH工具并安装至PC。  
+
+<a id="prepare-vs-code-development-environment"> </a>  
 
 ### 1.3 准备VS Code开发环境
 
-- [1.3.1 安装VS Code扩展插件](#131-安装vs-code扩展插件)
-- [1.3.2 配置Python解释器版本](#132-配置python解释器版本)
-- [1.3.3 配置工程模板](#133-配置工程模板)
-  - [1.3.3.1 使用映翰通标准工程模板](#1331-使用映翰通标准工程模板)
-  - [1.3.3.2 自定义工程模板](#1332-自定义工程模板)
+- [1.3.1 安装VS Code扩展插件](#install-vs-code-extension)
+- [1.3.2 配置Python解释器版本](#configure-python-interpreter-version)
+- [1.3.3 配置工程模板](#configure-project-template)
+  - [1.3.3.1 使用映翰通标准工程模板](#use-yinghantong-standard-engineering-template)
+  - [1.3.3.2 自定义工程模板](#custom-project-template)
+
+<a id="install-vs-code-extension"> </a>  
 
 #### 1.3.1 安装VS Code扩展插件
 为了在MobiusPi上开发并调试Python代码，您要在VS Code IDE的“Extensions”中安装以下必需的扩展插件：  
@@ -129,6 +156,8 @@ MobiusPi是InGateway系列产品二次开发平台的名称，本文档旨在为
 
 至此，MobiusPi二次开发平台所必需的插件安装完成。想要了解更多VS Code插件，请访问[Visual Studio Code官网](https://code.visualstudio.com/)。
 
+<a id="configure-python-interpreter-version"> </a>  
+
 #### 1.3.2 配置Python解释器版本
 使用快捷键：`Ctrl+Shift+P`弹出命令面板，在命令面板中输入`>Python: select Interpreter`。  
 
@@ -138,7 +167,12 @@ MobiusPi是InGateway系列产品二次开发平台的名称，本文档旨在为
 
 ![](./images/2019-12-02-10-45-42.png)
 
+<a id="configure-project-template"> </a>  
+
 #### 1.3.3 配置工程模板
+
+<a id="use-yinghantong-standard-engineering-template"> </a>  
+
 ##### 1.3.3.1 使用映翰通标准工程模板
 - 步骤1：您可以从[这里](https://github.com/inhandnet/MobiuspiProjectTemplates/releases)下载MobiusPi工程模板。  
 
@@ -186,6 +220,8 @@ MobiusPi是InGateway系列产品二次开发平台的名称，本文档旨在为
 
   ![](images/2019-12-27-09-56-06.png)
 
+<a id="custom-project-template"> </a>  
+
 ##### 1.3.3.2 自定义工程模板
 - 步骤1：新建一个工程模板文件夹，文件夹中必须包含以下内容。其他文件可根据您的实际情况自行添加  
   ```
@@ -206,19 +242,24 @@ MobiusPi是InGateway系列产品二次开发平台的名称，本文档旨在为
 
 - 步骤2：使用VS Code打开自定义工程模板文件夹，点击“文件 > 打开文件夹”并选择的自定义工程模板文件夹。  
 
-- 步骤3：在命令面板中输入`>Project:Save Project as Template`命令以将当前工程文件存为模板。
+- 步骤3：在命令面板中输入`>Project:Save Project as Template`命令以将当前工程文件存为模板。  
+
+
+<a id="write-the-mobiuspi-app-hello-world"> </a>  
 
 ## 2. 编写第一个MobiusPi App：Hello World
 本教程以开发一个“HelloWorld”App为例说明如何通过VS Code实现MobiusPi Python App的开发。该App具备在MobiusPi中每10秒打印一条“hello world!”日志以及导入配置文件修改日志内容的功能。  
 
-- [2.1 使用模板创建工程](#21-使用模板创建工程)
-- [2.2 编码](#22-编码)
-- [2.3 调试](#23-调试)
+- [2.1 使用模板创建工程](#create-a-project-using-a-template)
+- [2.2 编码](#coding)
+- [2.3 调试](#debug)
 - [2.4 构建App发布包](#24-构建app发布包)
-- [2.5 通过MobiusPi Web页面部署App](#25-通过mobiuspi-web页面部署app)
-- [2.6 查看App运行状态](#26-查看app运行状态)
-- [2.7 为App更新配置文件](#27-为app更新配置文件)
-- [2.8 附录](#28-附录)
+- [2.5 通过MobiusPi Web页面部署App](#deploy-app-via-mobiuspi-web-page)
+- [2.6 查看App运行状态](#view-the-running-status-of-the-app)
+- [2.7 为App更新配置文件](#update-configuration-file-for-app)
+- [2.8 附录](#appendix)
+
+<a id="create-a-project-using-a-template"> </a>  
 
 ### 2.1 使用模板创建工程
 - 步骤1：使用VS Code打开Python App的工程文件夹，打开后如下图所示：  
@@ -235,7 +276,9 @@ MobiusPi是InGateway系列产品二次开发平台的名称，本文档旨在为
 
   选择模板后VS Code会自动在当前工程文件夹下增加模板中包含的文件。  
 
-  ![](images/2019-12-27-09-59-42.png)
+  ![](images/2019-12-27-09-59-42.png)  
+
+<a id="coding"> </a>  
 
 ### 2.2 编码
 标准工程模板“helloworld-template”已经实现了在MobiusPi中每10秒打印一条“hello world!”日志以及导入配置文件修改日志内容的功能。如需修改App名称，请您参考下图修改`main. py`和`setup.py`中的代码。<font color=#FF0000>注意：Python App名称中不能包含空格。</font>  
@@ -244,10 +287,14 @@ MobiusPi是InGateway系列产品二次开发平台的名称，本文档旨在为
 
 ![](images/2020-05-11-19-11-06.png)  
 
+</a> <a id="debug"> </a>   
+
 ### 2.3 调试
 
-- [2.3.1 建立SFTP连接](#231-建立sftp连接)
-- [2.3.2 调试代码](#232-调试代码)
+- [2.3.1 建立SFTP连接](#establish-an-SFTP-connection)
+- [2.3.2 调试代码](#debug-code)
+
+<a id="establish-an-SFTP-connection"> </a>  
 
 #### 2.3.1 建立SFTP连接
 远程调试代码时需要先将本地代码上传到远程服务器（即MobiusPi）。上传本地代码前需要确认MobiusPi的调试模式已启用，启用调试模式后如下图所示：  
@@ -295,6 +342,8 @@ MobiusPi是InGateway系列产品二次开发平台的名称，本文档旨在为
 
   ![](./images/2019-12-05-10-48-21.png)
 
+<a id="debug-code"> </a>  
+
 #### 2.3.2 调试代码
 - 步骤1：同步代码  
   
@@ -327,6 +376,8 @@ MobiusPi是InGateway系列产品二次开发平台的名称，本文档旨在为
 
   ![](images/2019-12-23-15-53-14.png)
 
+<a id="build-app"> </a>  
+
 ### 2.4 构建App发布包
 调试完毕后可以构建App发布包以便于将App快速部署至其他MobiusPi。  
 - 步骤1：构建App发布包  
@@ -345,10 +396,14 @@ MobiusPi是InGateway系列产品二次开发平台的名称，本文档旨在为
 
   ![](images/2020-05-11-19-17-51.png)
 
+<a id="deploy-app-via-mobiuspi-web-page"> </a>  
+
 ### 2.5 通过MobiusPi Web页面部署App
 执行`main.py`脚本或构建App发布包命令后会自动在已连接的MobiusPi上生成对应的App,此App无法正常启动。请参考如下链接部署App至MobiusPi：  
 - [IG501部署App](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG501%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#python-app)  
 - [IG902部署App](https://ingateway-development-docs.readthedocs.io/zh_CN/latest/IG902%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.html#python-app)
+
+<a id="view-the-running-status-of-the-app"> </a>  
 
 ### 2.6 查看App运行状态
 在MobiusPi的“边缘计算 > Python边缘计算”页面可查看App的运行状态。  
@@ -360,6 +415,8 @@ MobiusPi是InGateway系列产品二次开发平台的名称，本文档旨在为
 ![](images/2020-02-13-15-27-03.png)   
 
 ![](./images/2019-12-05-14-54-03.png)  
+
+<a id="update-configuration-file-for-app"> </a>  
 
 ### 2.7 为App更新配置文件
 - 步骤1：修改配置文件  
@@ -378,11 +435,15 @@ MobiusPi是InGateway系列产品二次开发平台的名称，本文档旨在为
 
 ![](./images/2019-12-06-15-20-04.png)  
 
+<a id="appendix"> </a>  
+
 ### 2.8 附录
 
-- [2.8.1 为指定App安装第三方依赖库](#281-为指定app安装第三方依赖库)
-- [2.8.2 安装第三方依赖库至SDK](#282-安装第三方依赖库至sdk)
-- [2.8.3 启用代码自动补全](#283-启用代码自动补全)
+- [2.8.1 为指定App安装第三方依赖库](#install-third-party-dependent-libraries-for-the-specified-app)
+- [2.8.2 安装第三方依赖库至SDK](#install-third-party-dependent-libraries-to-sdk)
+- [2.8.3 启用代码自动补全](#enable-code-completion)
+
+<a id="install-third-party-dependent-libraries-for-the-specified-app"> </a>  
 
 #### 2.8.1 为指定App安装第三方依赖库
 为指定App安装第三方依赖库时需启用MobiusPi的调试模式并且接入互联网，以下以HelloWorld App安装`xlrd`依赖库为例说明如何为指定App安装第三方依赖库：  
@@ -419,6 +480,8 @@ MobiusPi是InGateway系列产品二次开发平台的名称，本文档旨在为
   
   ![](images/2020-02-18-09-55-04.png)
 
+<a id="install-third-party-dependent-libraries-to-sdk"> </a>  
+
 #### 2.8.2 安装第三方依赖库至SDK
 安装第三方依赖库至SDK时需启用MobiusPi的调试模式并且接入互联网，以下以安装`xlrd`依赖库至SDK为例说明如何安装第三方依赖库至SDK：  
 
@@ -446,6 +509,8 @@ MobiusPi是InGateway系列产品二次开发平台的名称，本文档旨在为
   ![](images/2020-05-12-09-52-36.png)  
 
 <font color=#FF0000>注意：使用此方法安装第三方依赖库后，若导入App发布包到其他未在SDK中安装此App运行所需的第三方依赖库的MobiusPi上时，App可能无法正常运行。</font>
+
+<a id="enable-code-completion"> </a>  
 
 #### 2.8.3 启用代码自动补全
 为了提高编码效率，您可以通过Python扩展插件实现代码自动补全功能。  
