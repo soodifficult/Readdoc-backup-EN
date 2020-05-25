@@ -253,7 +253,7 @@ MobiusPi是InGateway系列产品二次开发平台的名称，本文档旨在为
 - [2.1 使用模板创建工程](#create-a-project-using-a-template)
 - [2.2 编码](#coding)
 - [2.3 调试](#debug)
-- [2.4 构建App发布包](#24-构建app发布包)
+- [2.4 构建App发布包](#build-app)
 - [2.5 通过MobiusPi Web页面部署App](#deploy-app-via-mobiuspi-web-page)
 - [2.6 查看App运行状态](#view-the-running-status-of-the-app)
 - [2.7 为App更新配置文件](#update-configuration-file-for-app)
